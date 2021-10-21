@@ -59,6 +59,8 @@ Route::get('/iklan', [IklanController::class, 'index']);
 Route::get('download/{filename}', [DownloadControler::class, 'index']);
 Route::get('/dokumen/{id}/download', [KontenDokumenController::class, 'download']);
 
+Route::get('view/{filename}', [ViewController::class, 'index']);
+
 // Protected routes
 Route::group(['middleware' => ['auth:sanctum']], function () {
     Route::post('/kelas', [KelasController::class, 'store']);

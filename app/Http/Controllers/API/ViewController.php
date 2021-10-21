@@ -6,17 +6,17 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Response;
 
-class DownloadControler extends Controller
+class ViewController extends Controller
 {
     public function index($filename)
     {
         // Check if file exists in app/storage/file folder
-        $file_path = storage_path() .'assets/file/'. $filename;
+        $file_path = storage_path() .'/app/public/documents/'. $filename;
         if (file_exists($file_path))
         {
-            // Send Download
-            return Response::download($file_path, $filename, [
-                'Content-Length: '. filesize($file_path)
+            return Response::make(file_get_contents($file_path), 200, [
+                'Content-Type' => 'application/pdf',
+                'Content-Disposition' => 'inline; filename="'.$filename.'"'
             ]);
         }
         else
