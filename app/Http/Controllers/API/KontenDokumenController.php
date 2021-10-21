@@ -46,7 +46,7 @@ class KontenDokumenController extends Controller
             //store file into document folder
             $extention = $request->file->extension();
             $file_name = time().'.'.$extention;
-            $request->file->move(public_path('storage/documents'),$file_name);
+            $request->file->storeAs('public/documents', $file_name);
             //$file = $request->file->store(('public/documents'));
 
             //store your file into database
