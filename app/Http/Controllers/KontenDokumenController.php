@@ -34,7 +34,7 @@ class KontenDokumenController extends Controller
         if (isset($request->file)) {
             $extention = $request->file->extension();
             $file_name = time() . '.' . $extention;
-            $request->file->move(public_path('assets/file'), $file_name);
+            $request->file->move(public_path('storage/documents'), $file_name);
         } else {
             $file_name = null;
         }
@@ -79,7 +79,7 @@ class KontenDokumenController extends Controller
         if (isset($request->file)){
             $extention = $request->file->extension();
             $file_name = time().'.'.$extention;
-            $request->file->move(public_path('img'),$file_name);
+            $request->file->move(public_path('storage/documents'),$file_name);
             $kontenDokumen->file = $file_name;
         }else{}
 

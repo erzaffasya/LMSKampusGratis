@@ -44,7 +44,10 @@ class KontenDokumenController extends Controller
         if ($files = $request->file('file')) {
 
             //store file into document folder
-            $file = $request->file->store('public/documents');
+            $extention = $request->file->extension();
+            $file_name = time().'.'.$extention;
+            $request->file->move(public_path('storage/documents'),$file_name);
+            //$file = $request->file->store(('public/documents'));
 
             //store your file into database
             $kelas = Kelas::find($id);
@@ -52,14 +55,15 @@ class KontenDokumenController extends Controller
             $document->judul = $request->judul;
             $document->deskripsi = $request->deskripsi;
             $document->bab = $request->bab;
-            $document->file = $file;
+            $document->file = $file_name;
             $document->kelas_id = $request->kelas_id;
+    
             $kelas->get_video()->save($document);
 
             return response()->json([
                 "success" => true,
                 "message" => "File successfully uploaded",
-                "file" => $file
+                "file" => $file_name
             ]);
 
         }
@@ -120,7 +124,15 @@ class KontenDokumenController extends Controller
     {
         $dokumen = KontenDokumen::find($id);
         $lst = explode('/', $dokumen->file);
-        $txt = 'api/download/'.$lst[2];
+        $txt = 'api/download/'.$lst[0];
+        return redirect($txt);
+    }
+
+    public function view($id)
+    {
+        $dokumen = KontenDokumen::find($id);
+        $lst = explode('/', $dokumen->file);
+        $txt = 'api/view/'.$lst[0];
         return redirect($txt);
     }
 }

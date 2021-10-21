@@ -7,6 +7,7 @@ use App\Http\Controllers\API\KontenDokumenController;
 use App\Http\Controllers\API\KontenVideoController;
 use App\Http\Controllers\API\AuthController;
 use App\Http\Controllers\API\DownloadControler;
+use App\Http\Controllers\API\ViewController;
 use App\Http\Controllers\API\ArtikelController;
 use App\Http\Controllers\API\IklanController;
 use Illuminate\Http\Request;
@@ -58,6 +59,7 @@ Route::get('/iklan', [IklanController::class, 'index']);
 // Download Route
 Route::get('download/{filename}', [DownloadControler::class, 'index']);
 Route::get('/dokumen/{id}/download', [KontenDokumenController::class, 'download']);
+Route::get('/dokumen/{id}/view', [KontenDokumenController::class, 'view']);
 
 Route::get('view/{filename}', [ViewController::class, 'index']);
 

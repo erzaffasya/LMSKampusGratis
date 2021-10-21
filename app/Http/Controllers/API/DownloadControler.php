@@ -11,7 +11,8 @@ class DownloadControler extends Controller
     public function index($filename)
     {
         // Check if file exists in app/storage/file folder
-        $file_path = storage_path() .'assets/file/'. $filename;
+        $file_path = storage_path() .'/app/public/documents/'. $filename;
+        print($file_path);
         if (file_exists($file_path))
         {
             // Send Download
