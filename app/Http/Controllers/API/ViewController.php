@@ -25,5 +25,23 @@ class ViewController extends Controller
             exit('Requested file does not exist on our server!');
         }
     }
+
     // ->where('filename', '[A-Za-z0-9\-\_\.]+');
+    public function index2($filename)
+    {
+        // Check if file exists in app/storage/file folder
+        $file_path = storage_path() .'/app/public/documents/'. $filename;
+        if (file_exists($file_path))
+        {
+            return Response::make(file_get_contents($file_path), 200, [
+                'Content-Type' => 'application/jpg',
+                'Content-Disposition' => 'inline; filename="'.$filename.'"'
+            ]);
+        }
+        else
+        {
+            // Error
+            exit('Requested file does not exist on our server!');
+        }
+    }
 }

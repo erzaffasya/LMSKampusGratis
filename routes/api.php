@@ -55,13 +55,16 @@ Route::delete('artikel/delete/{id}', [ArtikelController::class, 'destroy']);
 
 //Route Iklan
 Route::get('/iklan', [IklanController::class, 'index']);
+Route::get('/iklan/{id}', [IklanController::class, 'show']);
+Route::get('/iklan/{id}/download', [IklanController::class, 'download']);
+Route::get('/iklan/{id}/view', [IklanController::class, 'view']);
 
 // Download Route
 Route::get('download/{filename}', [DownloadControler::class, 'index']);
 Route::get('/dokumen/{id}/download', [KontenDokumenController::class, 'download']);
 Route::get('/dokumen/{id}/view', [KontenDokumenController::class, 'view']);
-
 Route::get('view/{filename}', [ViewController::class, 'index']);
+Route::get('view2/{filename}', [ViewController::class, 'index2']);
 
 // Protected routes
 Route::group(['middleware' => ['auth:sanctum']], function () {
