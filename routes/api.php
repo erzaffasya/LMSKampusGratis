@@ -55,6 +55,7 @@ Route::delete('artikel/delete/{id}', [ArtikelController::class, 'destroy']);
 
 //Route Iklan
 Route::get('/iklan', [IklanController::class, 'index']);
+Route::post('/iklan', [IklanController::class, 'store']);
 Route::get('/iklan/{id}', [IklanController::class, 'show']);
 Route::get('/iklan/{id}/download', [IklanController::class, 'download']);
 Route::get('/iklan/{id}/view', [IklanController::class, 'view']);

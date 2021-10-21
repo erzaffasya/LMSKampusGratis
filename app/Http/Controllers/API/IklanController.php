@@ -27,7 +27,7 @@ class IklanController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request, $id)
+    public function store(Request $request)
     {
         $validator = Validator::make($request->all(),
               [
@@ -42,8 +42,7 @@ class IklanController extends Controller
             //store file into document folder
             $extention = $request->gambar->extension();
             $file_name = time().'.'.$extention;
-            $request->file->storeAs('public/documents', $file_name);
-            //$file = $request->file->store(('public/documents'));
+            $request->gambar->storeAs('public/documents', $file_name);
 
             //store your file into database
             $iklan = new Iklan();
