@@ -43,6 +43,10 @@ Route::resource('artikel', ArtikelController::class);
 Route::resource('iklan', IklanController::class);
 Route::resource('profil', ProfilController::class);
 
+Route::get('/linkstorage', function () {
+    Artisan::call('storage:link');
+    return '<h1>Storage Linked</h1>';
+});
 
 Route::get('/linkstorage', function () {
     Artisan::call('storage:link');
