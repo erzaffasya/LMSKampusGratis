@@ -33,7 +33,7 @@
                 </td>
                 <td class="align-middle text-center text-sm">
                   <div class="position-relative">
-                      <img src="../storage/public/documents/{{ $item->gambar }}" width="100" class="img-fluid shadow border-radius-xl">
+                      <img src="../storage/app/public/documents/{{ $item->gambar }}" width="100" class="img-fluid shadow border-radius-xl">
                   </div>
                 </td>
                 <td>
