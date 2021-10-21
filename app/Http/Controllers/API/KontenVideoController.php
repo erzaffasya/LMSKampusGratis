@@ -90,10 +90,20 @@ class KontenVideoController extends Controller
 
     public function store(Request $request, $id)
     {
+        $request->validate([
+            'judul' => 'required',
+            'deskripsi' => 'required',
+            'link' => 'required',
+            'bab' => 'required',
+        ]);
         $kelas = Kelas::find($id);
-        $video = KontenVideo::create($request->all());
-        $video->kelas_id = $kelas->id;
+        $video = new KontenVideo();
+        $video->judul = $request->judul;
+        $video->deskripsi = $request->deskripsi;
+        $video->link = $request->link;
+        $video->bab = $request->bab;
         $kelas->get_video()->save($video);
+
         return response()->json([
             "success" => true,
             "message" => "Video is successfully added",
