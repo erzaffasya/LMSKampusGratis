@@ -34,6 +34,7 @@
                 <td class="align-middle text-center text-sm">
                   <div class="position-relative">
                       <img src="/storage/app/public/documents/{{ $item->gambar }}" width="100" class="img-fluid shadow border-radius-xl">
+                      {{-- {{ asset('storage/struktur-organisasi/'.$hmtp->struktur_organisasi) }} --}}
                   </div>
                 </td>
                 <td>
