@@ -11,7 +11,8 @@ class KontenVidioController extends Controller
     {
         
         $kontenVidio = KontenVideo::all();
-        return view('admin.kontenVidio.index', compact('kontenVidio'));
+        $nama = Kelas::get();
+        return view('admin.kontenVidio.index',['nama'=>$nama], compact('kontenVidio','nama'));
     }
 
     public function create()

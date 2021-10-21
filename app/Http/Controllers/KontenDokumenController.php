@@ -10,7 +10,8 @@ class KontenDokumenController extends Controller
     public function index()
     {
         $kontenDokumen = KontenDokumen::all();
-        return view('admin.kontenDokumen.index', compact('kontenDokumen'));
+        $nama = Kelas::get();
+        return view('admin.kontenDokumen.index', ['nama'=>$nama], compact('kontenDokumen', 'nama'));
     }
 
     public function create()
@@ -34,7 +35,7 @@ class KontenDokumenController extends Controller
         if (isset($request->file)) {
             $extention = $request->file->extension();
             $file_name = time() . '.' . $extention;
-            $request->file->storeAs('public/documents', $file_name);
+            $request->file->move(public_path('assets/file'), $file_name);
         } else {
             $file_name = null;
         }
@@ -79,7 +80,7 @@ class KontenDokumenController extends Controller
         if (isset($request->file)){
             $extention = $request->file->extension();
             $file_name = time().'.'.$extention;
-            $request->file->storeAs('public/documents', $file_name);
+            $request->file->move(public_path('img'),$file_name);
             $kontenDokumen->file = $file_name;
         }else{}
 
