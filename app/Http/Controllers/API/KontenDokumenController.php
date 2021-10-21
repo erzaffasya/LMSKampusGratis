@@ -35,7 +35,6 @@ class KontenDokumenController extends Controller
                 'deskripsi' => 'required',
                 'file' => 'required|mimes:doc,docx,pdf,txt|max:2048',
                 'bab' => 'required',
-                'kelas_id' => 'required',
              ]);
         if ($validator->fails()) {
             return response()->json(['error'=>$validator->errors()], 401);
@@ -56,7 +55,7 @@ class KontenDokumenController extends Controller
             $document->deskripsi = $request->deskripsi;
             $document->bab = $request->bab;
             $document->file = $file_name;
-            $document->kelas_id = $request->kelas_id;
+            $document->kelas_id = $kelas->id;
     
             $kelas->get_video()->save($document);
 

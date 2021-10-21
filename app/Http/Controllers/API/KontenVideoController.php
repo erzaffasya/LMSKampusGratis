@@ -92,6 +92,7 @@ class KontenVideoController extends Controller
     {
         $kelas = Kelas::find($id);
         $video = KontenVideo::create($request->all());
+        $video->kelas_id = $kelas->id;
         $kelas->get_video()->save($video);
         return response()->json([
             "success" => true,
