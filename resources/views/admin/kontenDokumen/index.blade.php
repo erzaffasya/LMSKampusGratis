@@ -49,7 +49,7 @@
                     <span class="text-secondary text-xs font-weight-bold">{{ $item->bab }}</span>
                   </td>
                   <td class="align-middle text-center">
-                    <span class="text-secondary text-xs font-weight-bold">{{ $item->Kelas->nama }}</span>
+                    {{-- <span class="text-secondary text-xs font-weight-bold">{{ $item->kelas->nama }}</span> --}}
                   </td>
                   <td>
                     <div class="ms-auto text-end">

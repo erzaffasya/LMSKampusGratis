@@ -1,9 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\kontenDokumen;
+use App\Models\KontenDokumen;
 use Illuminate\Http\Request;
-use App\Models\kelas;
+use App\Models\Kelas;
 
 class KontenDokumenController extends Controller
 {

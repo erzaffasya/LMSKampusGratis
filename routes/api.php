@@ -8,6 +8,7 @@ use App\Http\Controllers\API\KontenVideoController;
 use App\Http\Controllers\API\AuthController;
 use App\Http\Controllers\API\DownloadControler;
 use App\Http\Controllers\API\ArtikelController;
+use App\Http\Controllers\API\IklanController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\Route;
