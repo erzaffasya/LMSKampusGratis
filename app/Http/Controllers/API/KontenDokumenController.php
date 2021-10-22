@@ -55,9 +55,9 @@ class KontenDokumenController extends Controller
             $document->deskripsi = $request->deskripsi;
             $document->bab = $request->bab;
             $document->file = $file_name;
-            $document->kelas_id = $kelas->id;
+            //$document->kelas_id = $kelas->id;
     
-            $kelas->get_video()->save($document);
+            $kelas->get_dokumen()->save($document);
 
             return response()->json([
                 "success" => true,
