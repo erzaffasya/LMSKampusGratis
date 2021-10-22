@@ -61,6 +61,7 @@ Route::post('/iklan', [IklanController::class, 'store']);
 Route::get('/iklan/{id}', [IklanController::class, 'show']);
 Route::get('/iklan/{id}/download', [IklanController::class, 'download']);
 Route::get('/iklan/{id}/view', [IklanController::class, 'view']);
+Route::resource('iklan', IklanController::class);
 
 // Download Route
 Route::get('download/{filename}', [DownloadControler::class, 'index']);

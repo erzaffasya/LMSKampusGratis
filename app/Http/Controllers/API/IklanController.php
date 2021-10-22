@@ -15,10 +15,16 @@ class IklanController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+
+    public function index() 
     {
-        //
-        return Iklan::all();
+        //return IklanResource::collection(Iklan::all());
+        $iklan = Iklan::all();
+        return response()->json([
+        "data" => $iklan
+        ], 200);
+    
+        
     }
 
     /**
