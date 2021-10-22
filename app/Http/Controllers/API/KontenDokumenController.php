@@ -134,4 +134,9 @@ class KontenDokumenController extends Controller
         $txt = 'api/view/'.$lst[0];
         return redirect($txt);
     }
+    
+    public function jumlah_dokumen($id)
+    {        
+        return KontenDokumen::where('kelas_id',$id)->count();
+    }
 }

@@ -109,5 +109,10 @@ class KontenVideoController extends Controller
             "message" => "Video is successfully added",
         ]);
     }
+
+    public function jumlah_video($id){
+
+        return KontenVideo::where('kelas_id',$id)->count();
+    }
 }
 

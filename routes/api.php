@@ -40,10 +40,12 @@ Route::get('/kelas/search/{name}', [KelasController::class, 'search']);
 Route::get('/dokumen', [KontenDokumenController::class, 'index']);
 Route::get('/dokumen/{id}', [KontenDokumenController::class, 'show']);
 Route::get('/dokumen/search/{name}', [KontenDokumenController::class, 'search']);
+Route::get('/jumlahDokumen/{id}', [KontenDokumenController::class, 'jumlah_dokumen']);
 
 Route::get('/video', [KontenVideoController::class, 'index']);
 Route::get('/video/{id}', [KontenVideoController::class, 'show']);
 Route::get('/vido/search/{name}', [KontenVideoController::class, 'search']);
+Route::get('/jumlahVideo/{id}', [KontenVideoController::class, 'jumlah_video']);
 
 //Route Artikel
 Route::get('/artikel', [ArtikelController::class, 'index']);
