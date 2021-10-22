@@ -47,8 +47,3 @@ Route::get('/linkstorage', function () {
     Artisan::call('storage:link');
     return '<h1>Storage Linked</h1>';
 });
-
-Route::get('/linkstorage', function () {
-    Artisan::call('storage:link');
-    return '<h1>Storage Linked</h1>';
-});
