@@ -14,6 +14,7 @@ class KontenDokumen extends Model
         'deskripsi',
         'file',
         'bab',
+        'kelas_id'
     ];
 
     protected $primaryKey = 'id';

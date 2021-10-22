@@ -21,7 +21,8 @@ class IklanController extends Controller
         //return IklanResource::collection(Iklan::all());
         $iklan = Iklan::all();
         return response()->json([
-        "data" => $iklan
+            "message" => "Success",
+            "data" => $iklan
         ], 200);
     
         
