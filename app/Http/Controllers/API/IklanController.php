@@ -102,7 +102,7 @@ class IklanController extends Controller
     {
         $iklan = Iklan::find($id);
         $lst = explode('/', $iklan->gambar);
-        $txt = 'api/view2/'.$lst[0];
+        $txt = 'api/download/'.$lst[0];
         return redirect($txt);
     }
 
@@ -110,9 +110,7 @@ class IklanController extends Controller
     {
         $iklan = Iklan::find($id);
         $lst = explode('/', $iklan->gambar);
-        //$txt = 'api/view2/'.$lst[0];
-        $filename = $lst[0];
-        $txt = '/storage/documents/'. $filename;
+        $txt = 'api/view2/'.$lst[0];
         return redirect($txt);
     }
 }
