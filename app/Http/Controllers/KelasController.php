@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 use App\Models\Kelas;
+use App\Models\KontenDokumen;
+use App\Models\KontenVideo;
 use Illuminate\Http\Request;
 
 class KelasController extends Controller
@@ -31,18 +33,20 @@ class KelasController extends Controller
             ->with('success', 'kelas Berhasil Ditambahkan');
     }
 
-    // public function show($id)
-    // {
-    //     $kelas = Kelas::where('id', $id)->first();
-    //     return view('admin.kelas.show', compact('kelas'))
-    //         ->with('i', (request()->input('page', 1) - 1) * 5);
-    // }
+    public function show($id)
+    {
+        $kelas = Kelas::where('id', $id)->first();
+        $kontenDokumen = kontenDokumen::where('kelas_id', $id)->get();
+        $kontenVideo = kontenVideo::where('kelas_id', $id)->get();
+        // dd($kontenVideo);
+        return view('admin.kelas.show', compact('kelas','kontenDokumen','kontenVideo'));
+    }
 
 
     public function edit($id)
     {
         $kelas = Kelas::find($id);
-
+ 
         return view('admin.kelas.edit', compact('kelas'));
     }
 
