@@ -45,6 +45,7 @@ class KontenDokumenController extends Controller
             //store file into document folder
             $extention = $request->file->extension();
             $file_name = time().'.'.$extention;
+            $txt = 'storage/documents/'. $file_name;
             $request->file->storeAs('public/documents', $file_name);
             //$file = $request->file->store(('public/documents'));
 
@@ -54,7 +55,7 @@ class KontenDokumenController extends Controller
             $document->judul = $request->judul;
             $document->deskripsi = $request->deskripsi;
             $document->bab = $request->bab;
-            $document->file = $file_name;
+            $document->file = $txt;
             //$document->kelas_id = $kelas->id;
     
             $kelas->get_dokumen()->save($document);
@@ -123,7 +124,7 @@ class KontenDokumenController extends Controller
     {
         $dokumen = KontenDokumen::find($id);
         $lst = explode('/', $dokumen->file);
-        $txt = 'api/download/'.$lst[0];
+        $txt = 'api/download/'.$lst[2];
         return redirect($txt);
     }
 
@@ -131,7 +132,7 @@ class KontenDokumenController extends Controller
     {
         $dokumen = KontenDokumen::find($id);
         $lst = explode('/', $dokumen->file);
-        $txt = 'api/view/'.$lst[0];
+        $txt = 'api/view/'.$lst[2];
         return redirect($txt);
     }
     

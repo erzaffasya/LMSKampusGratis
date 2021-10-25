@@ -29,13 +29,14 @@ class IklanController extends Controller
         if (isset($request->gambar)) {
             $extention = $request->gambar->extension();
             $file_name = time() . '.' . $extention;
+            $txt = "storage/documents/". $file_name;
             $request->gambar->storeAs('public/documents', $file_name);
         } else {
             $file_name = null;
         }
 
         iklan::create([
-            'gambar' => $file_name,
+            'gambar' => $txt,
         ]);
         return redirect()->route('iklan.index')
             ->with('success', 'iklan Berhasil Ditambahkan');

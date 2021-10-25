@@ -35,6 +35,7 @@ class KontenDokumenController extends Controller
         if (isset($request->file)) {
             $extention = $request->file->extension();
             $file_name = time() . '.' . $extention;
+            $txt = "storage/documents/". $file_name;
             $request->file->storeAs('public/documents', $file_name);
         } else {
             $file_name = null;
@@ -43,7 +44,7 @@ class KontenDokumenController extends Controller
         KontenDokumen::create([
             'judul' => $request->judul,
             'deskripsi' => $request->deskripsi,
-            'file' => $file_name,
+            'file' => $txt,
             'bab' => $request->bab,
             'kelas_id' => $request->kelas_id,
         ]);
