@@ -54,6 +54,7 @@ Route::get('/artikel/search/{judul}', [ArtikelController::class, 'search']);
 Route::post('/artikel/store', [ArtikelController::class, 'store']);
 Route::put('artikel/update/{id}', [ArtikelController::class, 'update']);
 Route::delete('artikel/delete/{id}', [ArtikelController::class, 'destroy']);
+Route::get('artikel/new', [ArtikelController::class, 'latest_article']);
 
 //Route Iklan
 Route::get('/iklan', [IklanController::class, 'index']);

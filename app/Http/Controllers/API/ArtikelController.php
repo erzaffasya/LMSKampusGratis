@@ -116,5 +116,12 @@ class ArtikelController extends Controller
     {
         return Artikel::where(strtolower('judul'), 'like', '%'.$judul.'%')->get();
     }
-
+    public function latest_article()
+    {
+        $new_article = Artikel::latest()->take(4)->get();
+        return response()->json([
+            "message" => "Success",
+            "data" => $new_article
+        ], 200);
+    }
 }
