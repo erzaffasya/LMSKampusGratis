@@ -15,9 +15,12 @@ class CreateJobChannelsTable extends Migration
     {
         Schema::create('job_channel', function (Blueprint $table) {
             $table->id();
-            $table->string('nama');
-            $table->string('gambar');
-            $table->string('no_hp');
+            $table->string('posisi_pekerjaan');
+            $table->string('nama_perusahaan');
+            $table->string('gaji');
+            $table->string('bidang');
+            $table->enum('tipe', ['Full Time', 'Part time', 'Internship'])->default('Full Time');
+            $table->string('pengalaman');
             $table->timestamps();
         });
     }
