@@ -21,7 +21,7 @@
               </div>
               <div class="mb-3">
                 <label for="exampleFormControlSelect1">Deskripsi artikel</label>
-                <textarea name="deskripsi">
+                <textarea name="deskripsi" rows="11">
                   {{$artikel->deskripsi}}
                 </textarea>
               </div>

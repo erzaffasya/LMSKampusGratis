@@ -20,7 +20,7 @@
               </div>
               <div class="mb-3">
                 <label for="exampleFormControlSelect1">Deskripsi</label>
-                <textarea name="deskripsi">
+                <textarea name="deskripsi" rows="11">
 
                 </textarea>
               </div>
