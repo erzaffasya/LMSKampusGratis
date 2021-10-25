@@ -43,7 +43,7 @@
                     <span class="text-secondary text-xs font-weight-bold">{{ $item->deskripsi }}</span>
                   </td>
                   <td class="align-middle text-center">
-                    <a href="{{asset($item->file)}}">Cek Berkas</a>
+                    <a href="{{asset($item->file)}}" target="_blank">Cek Berkas</a>
                   </td>
                   <td class="align-middle text-center">
                     <span class="text-secondary text-xs font-weight-bold">{{ $item->bab }}</span>
