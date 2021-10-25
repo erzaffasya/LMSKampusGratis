@@ -20,5 +20,8 @@
     {{-- datatable  --}}
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.2/css/jquery.dataTables.css">
 
+    <link href="{{asset('css/app.css')}}" rel="stylesheet" />
+
+    <script src="https://cdn.tiny.cloud/1/pbt8hv1pilzu9hy3yh33hvz7bnbdtjda34vxywwge56tcjou/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
     @stack('css')
 </head>

@@ -6,7 +6,7 @@
 <script src="{{asset('assets/js/plugins/chartjs.min.js')}}"></script>
 
 {{-- datatable  --}}
-<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.2/js/jquery.dataTables.js"></script>
+<script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
 
 <script>
   var ctx = document.getElementById("chart-bars").getContext("2d");

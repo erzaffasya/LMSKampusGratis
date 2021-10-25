@@ -4,10 +4,10 @@
       <div class="card-header pb-0 p-3">
         <div class="row">
           <div class="col-6 d-flex align-items-center">
-            <h6 class="mb-0">Data Kelas</h6>
+            <h6 class="mb-0">Data Job Channel</h6>
           </div>
           <div class="col-6 text-end">
-            <a class="btn bg-gradient-dark mb-0" href="{{route('kelas.create')}}"><i class="fas fa-plus"></i>&nbsp;&nbsp;Tambah Data</a>
+            <a class="btn bg-gradient-dark mb-0" href="{{route('jobChannel.create')}}"><i class="fas fa-plus"></i>&nbsp;&nbsp;Tambah Data</a>
           </div>
         </div>
       </div>
@@ -19,14 +19,19 @@
               <thead>
                 <tr>
                   <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">No</th>
-                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Nama</th>
-                  <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Deskripsi</th>
+                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Posisi Pekerjaan</th>
+                  <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Nama Perusahaan</th>
+                  <th class="text-end text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Gaji</th>
+                  <th class="text-end text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Bidang</th>
+                  <th class="text-end text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Tipe</th>
+                  <th class="text-end text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Pengalaman</th>
+                  <th class="text-end text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Foto</th>
                   <th class="text-end text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Aksi</th>
                 </tr>
               </thead>
 
               <tbody>
-                @foreach ($kelas as $item)
+                @foreach ($jobChannel as $item)
                 <tr>
                   <td>
                     <div class="d-flex px-2 py-1">
@@ -36,10 +41,25 @@
                     </div>
                   </td>
                   <td>
-                    <p class="text-xs font-weight-bold mb-0">{{ $item->nama }}</p>
+                    <p class="text-xs font-weight-bold mb-0">{{ $item->posisi_pekerjaan }}</p>
                   </td>
                   <td class="align-middle text-center">
-                    <span class="text-secondary text-xs font-weight-bold">{{ $item->deskripsi }}</span>
+                    <span class="text-secondary text-xs font-weight-bold">{{ $item->nama_perusahaan }}</span>
+                  </td>
+                  <td>
+                    <p class="text-xs font-weight-bold mb-0">{{ $item->gaji }}</p>
+                  </td>
+                  <td>
+                    <p class="text-xs font-weight-bold mb-0">{{ $item->bidang }}</p>
+                  </td>
+                  <td>
+                    <p class="text-xs font-weight-bold mb-0">{{ $item->tipe }}</p>
+                  </td>
+                  <td>
+                    <p class="text-xs font-weight-bold mb-0">{{ $item->pengalaman }}</p>
+                  </td>
+                  <td>
+                    <img src="{{asset('storage/job-channel/'.$item->foto)}}" width="100"  >
                   </td>
                   <td>
                     <div class="ms-auto text-end">
@@ -48,8 +68,8 @@
                         @method("DELETE")
                         <button type="submit" class="btn btn-link text-danger text-gradient px-3 mb-0"><i class="far fa-trash-alt me-2">Delete</i></button>
                       </form>
-                      <a class="btn btn-link text-dark px-3 mb-0" href="{{route('kelas.edit', $item->id)}}"><i class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i>Edit</a>
-                      <a class="btn btn-link text-dark px-3 mb-0" href="{{route('kelas.show', $item->id)}}"><i class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i>Show</a>
+                      <a class="btn btn-link text-dark px-3 mb-0" href="{{route('jobChannel.edit', $item->id)}}"><i class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i>Edit</a>
+                      <a class="btn btn-link text-dark px-3 mb-0" href="{{route('jobChannel.show', $item->id)}}"><i class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i>Show</a>
                     </div>
                   </td>
                 </tr>
@@ -82,7 +102,7 @@
   <script>
     $(document).ready(function() {
       $('#myTable').DataTable();
-    });    
+    });
   </script>
   @endpush
 </x-app-layout>

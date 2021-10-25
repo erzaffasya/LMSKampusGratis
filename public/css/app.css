@@ -1,1 +1,7 @@
 
+.table td{
+    max-width: 30rem;
+    white-space: nowrap;
+    overflow: auto;
+    /* text-overflow: ellipsis; */
+}
