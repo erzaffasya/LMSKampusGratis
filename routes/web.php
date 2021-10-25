@@ -24,6 +24,9 @@ Route::get('/', function () {
 Route::get('/form', function () {
     return view('form');
 })->name('form');
+Route::get('/tab', function () {
+    return view('tab');
+})->name('form');
 // Route::get('/konten-vidio', function () {
 //     return view('admin.kontenVidio.index');
 // })->name('konten-vidio');
