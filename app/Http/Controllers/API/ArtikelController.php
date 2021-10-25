@@ -17,7 +17,11 @@ class ArtikelController extends Controller
     public function index()
     {
         //
-        return Artikel::all();
+        $artikel = Artikel::all();
+        return response()->json([
+            "message" => "Success",
+            "data" => $artikel
+        ], 200);
     }
 
     /**
