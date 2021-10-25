@@ -38,7 +38,8 @@
                   <td>
                     <p class="text-xs font-weight-bold mb-0">{{ $item->nama }}</p>
                   </td>
-                  <td class="align-middle text-center">
+                  <td class="align-middle text-center" style=
+                  "">
                     <span class="text-secondary text-xs font-weight-bold">{{ $item->deskripsi }}</span>
                   </td>
                   <td>

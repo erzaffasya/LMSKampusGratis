@@ -102,11 +102,13 @@
   
                 <div class="mb-3">
                   <label for="exampleFormControlSelect1">Kelas</label>
-                  <select class="form-control" name="kelas_id" id="exampleFormControlSelect1">
-                    {{-- @foreach ($kelas as $item)
-                    <option value="{{$item->id}}">{{$item->nama}}</option>
-                    @endforeach --}}
-                    <option value=""></option>
+                  <select class="form-control" name="kelas_id" id="exampleFormControlSelect1" disabled>
+                    @foreach ($kelasselect as $item)
+                    <option value="{{$item->id}}" @if ($item->id == $kelas->id)
+                        selected
+                    @endif>{{$item->nama}}</option>
+                    @endforeach
+                    
                   </select>
                 </div>
   
@@ -142,10 +144,12 @@
                 <div class="mb-3">
                   <label for="exampleFormControlSelect1">Kelas</label>
                   <select class="form-control" name="kelas_id" id="exampleFormControlSelect1">
-                    {{-- @foreach ($kelas as $item)
-                    <option value="{{$item->id}}">{{$item->nama}}</option>
-                    @endforeach --}}
-                    <option value=""></option>
+                    @foreach ($kelasselect as $item)
+                    <option value="{{$item->id}}" @if ($item->id == $kelas->id)
+                        selected
+                    @endif>{{$item->nama}}</option>
+                    @endforeach
+                    
                   </select>
                 </div>
   

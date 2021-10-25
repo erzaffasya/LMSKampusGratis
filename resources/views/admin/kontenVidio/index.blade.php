@@ -13,7 +13,7 @@
           </div>
         </div>
         <div class="card-body px-0 pt-0 pb-2">
-          <div class="table-responsive p-0">
+          {{-- <div class="table-responsive p-0"> --}}
             <table id="myTable" class="table align-items-center mb-0">
 
               <thead>
@@ -68,16 +68,16 @@
               </tbody>
 
             </table>
-          </div>
+          {{-- </div> --}}
         </div>
       </div>
     </div>
   </div>
   @push('scripts')
   <script>
-    $(document).ready(function() {
-      $('#myTable').DataTable();
-    });
+ $(document).ready( function () {
+    $('#myTable').DataTable();
+} );
   </script>
-  @endpush
+@endpush
 </x-app-layout>

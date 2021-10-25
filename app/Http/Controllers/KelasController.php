@@ -38,8 +38,9 @@ class KelasController extends Controller
         $kelas = Kelas::where('id', $id)->first();
         $kontenDokumen = kontenDokumen::where('kelas_id', $id)->get();
         $kontenVideo = kontenVideo::where('kelas_id', $id)->get();
+        $kelasselect = Kelas::all();
         // dd($kontenVideo);
-        return view('admin.kelas.show', compact('kelas','kontenDokumen','kontenVideo'));
+        return view('admin.kelas.show', compact('kelas','kontenDokumen','kontenVideo','kelasselect'));
     }
 
 
