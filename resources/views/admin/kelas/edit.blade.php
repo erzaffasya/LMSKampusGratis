@@ -17,7 +17,9 @@
               </div>
               <div class="mb-3">
                 <label for="exampleFormControlSelect1">Deskripsi Kelas</label>
-                <input type="text" class="form-control" name="deskripsi" value="{{$kelas->deskripsi}}" placeholder="Deskripsi" aria-label="Name" aria-describedby="email-addon">
+                <textarea>
+                  {{$kelas->deskripsi}}
+                </textarea>
               </div>
               <div class="text-center">
                 <button type="submit" class="btn bg-gradient-dark w-100 my-4 mb-2">Simpan</button>
@@ -28,4 +30,14 @@
       </div>
     </div>
   </div>
+
+  @push('scripts')
+  <script>
+    tinymce.init({
+      selector: 'textarea',
+      plugins: 'advlist autolink lists link image charmap print preview hr anchor pagebreak',
+      toolbar_mode: 'floating',
+   });
+  </script>
+  @endpush
 </x-app-layout>
