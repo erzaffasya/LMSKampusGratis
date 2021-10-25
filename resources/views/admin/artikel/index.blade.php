@@ -37,7 +37,7 @@
                   <p class="text-xs font-weight-bold mb-0">{{ $item->judul }}</p>
                 </td>
                 <td class="align-middle text-center text-sm">
-                  <img src="../assets/foto/artikel/{{ $item->gambar }}" width="100">
+                  <img src="{{ asset( $item->gambar) }}" width="100" class="img-fluid shadow border-radius-xl">
                 </td>
                 <td class="align-middle text-center">
                   <span class="text-secondary text-xs font-weight-bold">{{ $item->deskripsi }}</span>

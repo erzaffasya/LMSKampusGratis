@@ -6,7 +6,7 @@ use App\Http\Controllers\API\KelasController;
 use App\Http\Controllers\API\KontenDokumenController;
 use App\Http\Controllers\API\KontenVideoController;
 use App\Http\Controllers\API\AuthController;
-use App\Http\Controllers\API\DownloadControler;
+use App\Http\Controllers\API\DownloadController;
 use App\Http\Controllers\API\ViewController;
 use App\Http\Controllers\API\ArtikelController;
 use App\Http\Controllers\API\IklanController;
@@ -64,11 +64,11 @@ Route::get('/iklan/{id}/view', [IklanController::class, 'view']);
 Route::resource('iklan', IklanController::class);
 
 // Download Route
-Route::get('download/{filename}', [DownloadControler::class, 'index']);
+Route::get('download/{filename}', [DownloadController::class, 'index']);
 Route::get('/dokumen/{id}/download', [KontenDokumenController::class, 'download']);
 Route::get('/dokumen/{id}/view', [KontenDokumenController::class, 'view']);
 Route::get('view/{filename}', [ViewController::class, 'index']);
-Route::get('view2/{filename}', [ViewController::class, 'index2']);
+Route::get('download_images/{filename}', [DownloadController::class, 'index_images']);
 
 // Protected routes
 Route::group(['middleware' => ['auth:sanctum']], function () {

@@ -31,7 +31,8 @@ class ArtikelController extends Controller
         if (isset($request->gambar)) {
             $extention = $request->gambar->extension();
             $file_name = time() . '.' . $extention;
-            $request->gambar->move(public_path('assets/foto/artikel'), $file_name);
+            $txt = 'storage/images/'. $file_name;
+            $request->gambar->storeAs('public/images', $file_name);
         } else {
             $file_name = null;
         }
@@ -39,7 +40,7 @@ class ArtikelController extends Controller
         artikel::create([
             'judul' => $request->judul,
             'deskripsi' => $request->deskripsi,
-            'gambar' => $file_name,
+            'gambar' => $txt,
         ]);
         return redirect()->route('artikel.index')
             ->with('success', 'artikel Berhasil Ditambahkan');

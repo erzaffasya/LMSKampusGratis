@@ -41,19 +41,22 @@ class ArtikelController extends Controller
         if ($gambar = $request->file('gambar')) {
 
             //store file into document folder
-            $gambar = $request->file->store('public/gambar_artikel');
+            $extention = $request->file->extension();
+            $file_name = time() . '.' . $extention;
+            $txt = 'storage/images/'. $file_name;
+            $request->gambar->storeAs('public/images', $file_name);
 
             //store your file into database
             $artikel = new Artikel();
             $artikel->judul = $request->judul;
-            $artikel->gambar = $gambar;
+            $artikel->gambar = $txt;
             $artikel->deskripsi = $request->deskripsi;
 
 
             return response()->json([
                 "success" => true,
                 "message" => "File successfully uploaded",
-                "file" => $gambar
+                "file" => $txt
             ]);
 
         }

@@ -47,8 +47,8 @@ class IklanController extends Controller
             //store file into document folder
             $extention = $request->gambar->extension();
             $file_name = time().'.'.$extention;
-            $txt = 'storage/documents/'. $file_name;
-            $request->gambar->storeAs('public/documents', $file_name);
+            $txt = 'storage/images/'. $file_name;
+            $request->gambar->storeAs('public/images', $file_name);
 
             //store your file into database
             $iklan = new Iklan();
@@ -108,7 +108,7 @@ class IklanController extends Controller
     {
         $iklan = Iklan::find($id);
         $lst = explode('/', $iklan->gambar);
-        $txt = 'api/view2/'.$lst[2];
+        $txt = 'api/download_images/'.$lst[2];
         return redirect($txt);
     }
 
@@ -116,9 +116,8 @@ class IklanController extends Controller
     {
         $iklan = Iklan::find($id);
         $lst = explode('/', $iklan->gambar);
-        //$txt = 'api/view2/'.$lst[0];
-        $filename = $lst[2];
-        $txt = '/storage/documents/'. $filename;
+        $txt = $iklan->gambar;
+        print($txt);
         return redirect($txt);
     }
 }
