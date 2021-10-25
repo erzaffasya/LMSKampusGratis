@@ -5,6 +5,7 @@ use App\Http\Controllers\KelasController;
 use App\Http\Controllers\IklanController;
 use App\Http\Controllers\ArtikelController;
 use App\Http\Controllers\ProfilController;
+use App\Http\Controllers\JobChannelController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -42,7 +43,7 @@ Route::resource('kelas', KelasController::class);
 Route::resource('artikel', ArtikelController::class);
 Route::resource('iklan', IklanController::class);
 Route::resource('profil', ProfilController::class);
-
+Route::resource('jobChannel', JobChannelController::class);
 Route::get('/linkstorage', function () {
     Artisan::call('storage:link');
     return '<h1>Storage Linked</h1>';

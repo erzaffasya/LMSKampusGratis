@@ -19,8 +19,9 @@ class CreateJobChannelsTable extends Migration
             $table->string('nama_perusahaan');
             $table->string('gaji');
             $table->string('bidang');
-            $table->enum('tipe', ['Full Time', 'Part time', 'Internship'])->default('Full Time');
+            $table->enum('tipe', ['Full Time', 'Part Time', 'Internship'])->default('Full Time');
             $table->string('pengalaman');
+            $table->string('foto');
             $table->timestamps();
         });
     }
