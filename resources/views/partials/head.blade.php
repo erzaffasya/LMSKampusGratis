@@ -15,7 +15,7 @@
   <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
   <link href="{{asset('assets/css/nucleo-svg.css')}}" rel="stylesheet" />
   <!-- CSS Files -->
-  <link id="pagestyle" href="{{('assets/css/soft-ui-dashboard.css?v=1.0.4')}}" rel="stylesheet" />
+  <link id="pagestyle" href="{{asset('assets/css/soft-ui-dashboard.css?v=1.0.4')}}" rel="stylesheet" />
 
     <link href="{{asset('css/app.css')}}" rel="stylesheet" />
 
@@ -23,4 +23,3 @@
     @stack('css')
 </head>
 
-  
