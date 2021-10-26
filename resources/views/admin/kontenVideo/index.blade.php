@@ -18,25 +18,21 @@
 
               <thead>
                 <tr>
-                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">No</th>
-                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Judul</th>
-                  <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Deskripsi</th>
+                  <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">No</th>
+                  <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ">Judul</th>
+                  <th class="text-center text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Deskripsi</th>
                   <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Link</th>
                   <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Bab</th>
                   <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Kelas</th>
-                  <th class="text-end text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Aksi</th>
+                  <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Aksi</th>
                 </tr>
               </thead>
 
               <tbody>
                 @foreach ($kontenVideo as $item)
                   <tr>
-                    <td>
-                      <div class="d-flex px-2 py-1">
-                        <div class="d-flex flex-column justify-content-center">
-                          <p class="text-xs font-weight-bold mb-0">{{ $loop->iteration }}</p>
-                        </div>
-                      </div>
+                    <td class="align-middle text-center">
+                      <span class="text-secondary text-xs font-weight-bold">{{ $loop->iteration }}</span>
                     </td>
                     <td>
                       <p class="text-xs font-weight-bold mb-0">{{ $item->judul }}</p>
@@ -54,7 +50,7 @@
                       <span class="text-secondary text-xs font-weight-bold">{{ $item->kelas->nama }}</span>
                     </td>
                     <td>
-                      <div class="ms-auto text-end">
+                      <div class="ms-auto text-center">
                         <form action="{{route('kontenVideo.destroy', $item->id)}}" method="POST" style="display: inline">
                           @csrf
                           @method("DELETE")

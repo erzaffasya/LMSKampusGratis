@@ -18,58 +18,53 @@
 
               <thead>
                 <tr>
-                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">No</th>
-                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Posisi Pekerjaan</th>
-                  <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Nama Perusahaan</th>
-                  <th class="text-end text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Gaji</th>
-                  <th class="text-end text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Bidang</th>
-                  <th class="text-end text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Tipe</th>
-                  <th class="text-end text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Pengalaman</th>
-                  <th class="text-end text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Foto</th>
-                  <th class="text-end text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Aksi</th>
+                  <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">No</th>
+                  <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ">Posisi Pekerjaan</th>
+                  <th class="text-center text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Nama Perusahaan</th>
+                  <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Gaji</th>
+                  <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Bidang</th>
+                  <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Tipe</th>
+                  <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Pengalaman</th>
+                  <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Foto</th>
+                  <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Aksi</th>
                 </tr>
               </thead>
 
               <tbody>
                 @foreach ($jobChannel as $item)
                 <tr>
-                  <td>
-                    <div class="d-flex px-2 py-1">
-                      <div class="d-flex flex-column justify-content-center">
-                        <p class="text-xs font-weight-bold mb-0">{{ $loop->iteration }}</p>
-                      </div>
-                    </div>
+                  <td class="align-middle text-center">
+                    <span class="text-secondary text-xs font-weight-bold">{{ $loop->iteration }}</span>
                   </td>
-                  <td>
+                  <td class="align-middle text-center">
                     <p class="text-xs font-weight-bold mb-0">{{ $item->posisi_pekerjaan }}</p>
                   </td>
                   <td class="align-middle text-center">
                     <span class="text-secondary text-xs font-weight-bold">{{ $item->nama_perusahaan }}</span>
                   </td>
-                  <td>
+                  <td class="align-middle text-center">
                     <p class="text-xs font-weight-bold mb-0">{{ $item->gaji }}</p>
                   </td>
-                  <td>
+                  <td class="align-middle text-center">
                     <p class="text-xs font-weight-bold mb-0">{{ $item->bidang }}</p>
                   </td>
-                  <td>
+                  <td class="align-middle text-center">
                     <p class="text-xs font-weight-bold mb-0">{{ $item->tipe }}</p>
                   </td>
-                  <td>
+                  <td class="align-middle text-center">
                     <p class="text-xs font-weight-bold mb-0">{{ $item->pengalaman }}</p>
                   </td>
-                  <td>
+                  <td class="align-middle text-center">
                     <img src="{{asset('storage/job-channel/'.$item->foto)}}" width="100"  >
                   </td>
                   <td>
-                    <div class="ms-auto text-end">
+                    <div class="ms-auto text-center">
                       <form action="{{route('kelas.destroy', $item->id)}}" method="POST" style="display: inline">
                         @csrf
                         @method("DELETE")
                         <button type="submit" class="btn btn-link text-danger text-gradient px-3 mb-0"><i class="fas fa-trash text-secondary"></i></button>
                       </form>
                       <a class="btn btn-link text-dark px-3 mb-0" href="{{route('jobChannel.edit', $item->id)}}"><i class="fas fa-user-edit text-secondary"></i></a>
-                      <a class="btn btn-link text-dark px-3 mb-0" href="{{route('jobChannel.show', $item->id)}}"><i class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i>Show</a>
                     </div>
                   </td>
                 </tr>
