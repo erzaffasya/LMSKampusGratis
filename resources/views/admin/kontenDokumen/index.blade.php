@@ -40,7 +40,7 @@
                     <p class="text-xs font-weight-bold mb-0">{{ $item->judul }}</p>
                   </td>
                   <td class="align-middle text-center">
-                    <span class="text-secondary text-xs font-weight-bold">{{ $item->deskripsi }}</span>
+                    <span class="text-secondary text-xs font-weight-bold">{!! $item->deskripsi !!}</span>
                   </td>
                   <td class="align-middle text-center">
                     <a href="{{asset($item->file)}}" target="_blank">Cek Berkas</a>
@@ -56,9 +56,9 @@
                       <form action="{{route('kontenDokumen.destroy', $item->id)}}" method="POST" style="display: inline">
                         @csrf
                         @method("DELETE")
-                        <button type="submit" class="btn btn-link text-danger text-gradient px-3 mb-0"><i class="fas fa-trash text-secondary"></i></button>
+                        <button type="submit" class="btn btn-link text-danger text-gradient px-3 mb-0"><i class="far fa-trash-alt me-2">Delete</i></button>
                       </form>
-                      <a class="btn btn-link text-dark px-3 mb-0" href="{{route('kontenDokumen.edit', $item->id)}}"><i class="fas fa-user-edit text-secondary"></i></a>
+                      <a class="btn btn-link text-dark px-3 mb-0" href="{{route('kontenDokumen.edit', $item->id)}}"><i class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i>Edit</a>
                     </div>
                   </td>
                 </tr>

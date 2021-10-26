@@ -42,7 +42,7 @@
                       <p class="text-xs font-weight-bold mb-0">{{ $item->judul }}</p>
                     </td>
                     <td class="align-middle text-center">
-                      <span class="text-secondary text-xs font-weight-bold">{{ $item->deskripsi }}</span>
+                      <span class="text-secondary text-xs font-weight-bold">{!! $item->deskripsi !!}</span>
                     </td>
                     <td class="align-middle text-center">
                       <span class="text-secondary text-xs font-weight-bold">{{ $item->link }}</span>

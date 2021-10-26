@@ -72,8 +72,9 @@ class ArtikelController extends Controller
         if (isset($request->gambar)){
             $extention = $request->gambar->extension();
             $file_name = time().'.'.$extention;
+            $txt = 'storage/images/'. $file_name;
             $request->gambar->move(public_path('assets/foto/artikel'),$file_name);
-            $artikel->gambar = $file_name;
+            $artikel->gambar = $txt;
         }else{}
 
         $artikel->save();

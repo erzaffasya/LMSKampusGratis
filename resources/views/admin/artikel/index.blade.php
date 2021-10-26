@@ -40,7 +40,7 @@
                   <img src="{{ asset( $item->gambar) }}" width="100" class="img-fluid shadow border-radius-xl">
                 </td>
                 <td class="align-middle text-center">
-                  <span class="text-secondary text-xs font-weight-bold">{{ $item->deskripsi }}</span>
+                  <span class="text-secondary text-xs font-weight-bold">{!! $item->deskripsi !!}</span>
                 </td>
                 <td>
                   <div class="ms-auto text-end">

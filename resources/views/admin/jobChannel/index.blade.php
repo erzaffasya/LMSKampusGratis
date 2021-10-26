@@ -76,7 +76,7 @@
                 {{-- <tr>
                   <td>{{ $loop->iteration }}</td>
                   <td>{{ $item->nama }}</td>
-                  <td>{{ $item->deskripsi }}</td>
+                  <td>{!! $item->deskripsi !!}</td>
                   <td>
                     <div class="btn-group" role="group">
                       <a href="{{route('kelas.edit', $item->id)}}" class="btn btn-primary"><i class="material-icons">edit</i></a>

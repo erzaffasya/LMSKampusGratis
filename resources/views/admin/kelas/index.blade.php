@@ -39,7 +39,7 @@
                     <p class="text-xs font-weight-bold mb-0">{{ $item->nama }}</p>
                   </td>
                   <td class="align-middle text-center">
-                    <span class="text-secondary text-xs font-weight-bold">{{ $item->deskripsi }}</span>
+                    <span class="text-secondary text-xs font-weight-bold">{!! $item->deskripsi !!}</span>
                   </td>
                   <td>
                     <div class="ms-auto text-end">
@@ -56,7 +56,7 @@
                 {{-- <tr>
                   <td>{{ $loop->iteration }}</td>
                   <td>{{ $item->nama }}</td>
-                  <td>{{ $item->deskripsi }}</td>
+                  <td>{!! $item->deskripsi !!}</td>
                   <td>
                     <div class="btn-group" role="group">
                       <a href="{{route('kelas.edit', $item->id)}}" class="btn btn-primary"><i class="material-icons">edit</i></a>

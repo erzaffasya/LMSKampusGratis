@@ -81,8 +81,9 @@ class KontenDokumenController extends Controller
         if (isset($request->file)){
             $extention = $request->file->extension();
             $file_name = time().'.'.$extention;
+            $txt = "storage/documents/". $file_name;
             $request->file->storeAs('public/documents', $file_name);
-            $kontenDokumen->file = $file_name;
+            $kontenDokumen->file = $txt;
         }else{}
 
         $kontenDokumen->save();

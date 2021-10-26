@@ -14,8 +14,8 @@
             </div>
             <div class="mb-3">
               <label for="exampleFormControlSelect1">Deskripsi Kelas</label>
-              <textarea name="deskripsi" class="nonEditableMCE" rows="11"> 
-                {{$kelas->deskripsi}}
+              <textarea name="deskripsi" class="nonEditableMCE" rows="11">
+              {{$kelas->deskripsi}}
               </textarea>
             </div>
 
@@ -91,30 +91,30 @@
                   <label for="exampleFormControlSelect1">Deskripsi</label>
                   <textarea name="deskripsi" class="editableMCE" rows="11"> </textarea>
                 </div>
-  
+
                 <div class="mb-3">
                   <label for="exampleFormControlSelect1">File Dokumen</label>
                   <br>
                   <input type="file" class="" name="file">
                 </div>
-  
+
                 <div class="mb-3">
                   <label for="exampleFormControlSelect1">BAB</label>
                   <input type="number" class="form-control" name="bab">
                 </div>
-  
+
                 <div class="mb-3">
                   <label for="exampleFormControlSelect1">Kelas</label>
                   <select class="form-control" id="exampleFormControlSelect1" disabled>
                     @foreach ($kelasselect as $item)
                     <option value="{{$item->id}}" @if ($item->id == $kelas->id)
-                        selected
-                    @endif>{{$item->nama}}</option>
-                    @endforeach                    
+                      selected
+                      @endif>{{$item->nama}}</option>
+                    @endforeach
                   </select>
                   <input name="kelas_id" value="{{$item->id}}" type="hidden">
                 </div>
-  
+
                 <div class="text-center">
                   <button type="submit" class="btn bg-gradient-dark w-100 my-4 mb-2">Submit</button>
                 </div>
@@ -133,84 +133,55 @@
                   <label for="exampleFormControlSelect1">Deskripsi</label>
                   <textarea name="deskripsi" rows="11" class="editableMCE"> </textarea>
                 </div>
-  
+
                 <div class="mb-3">
                   <label for="exampleFormControlSelect1">Link</label>
                   <input type="text" class="form-control" name="link" placeholder="Masukkan Link">
                 </div>
-  
+
                 <div class="mb-3">
                   <label for="exampleFormControlSelect1">BAB</label>
                   <input type="number" class="form-control" name="bab">
                 </div>
-  
+
                 <div class="mb-3">
                   <label for="exampleFormControlSelect1">Kelas</label>
-                  <select class="form-control"  id="exampleFormControlSelect1" disabled>
+                  <select class="form-control" id="exampleFormControlSelect1" disabled>
                     @foreach ($kelasselect as $item)
                     <option value="{{$item->id}}" @if ($item->id == $kelas->id)
-                        selected
-                    @endif>{{$item->nama}}</option>
-                    @endforeach                    
+                      selected
+                      @endif>{{$item->nama}}</option>
+                    @endforeach
                   </select>
                   <input name="kelas_id" value="{{$item->id}}" type="hidden">
                 </div>
-  
+
                 <div class="text-center">
                   <button type="submit" class="btn bg-gradient-dark w-100 my-4 mb-2">Submit</button>
                 </div>
               </form>
             </div>
           </div>
-
-            <div class="mb-3" >
-
-              <table>
-                <thead>
-                  <th class="text-left"> Konten Video </th>
-                  <th> Konten Dokumen </th>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td class="text-right">
-                      <ul>
-                        @foreach ($kontenVideo as $item)
-                        <li>{{$item->judul}}</li>
-                        @endforeach
-                      </ul>
-                    </td>
-                    <td>
-                      <ul>
-                        @foreach ($kontenDokumen as $item)
-                        <li>{{$item->judul}}</li>
-                        @endforeach
-                      </ul>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-
-          </div>
         </div>
       </div>
     </div>
   </div>
+  
 
 
   @push('scripts')
   <script>
-tinymce.init({
-        selector: ".nonEditableMCE",
-        plugins: 'advlist autolink lists link image charmap print preview hr anchor pagebreak',
-        toolbar_mode: 'floating',
-        readonly : 1
+    tinymce.init({
+      selector: ".nonEditableMCE",
+      plugins: 'advlist autolink lists link image charmap print preview hr anchor pagebreak',
+      toolbar_mode: 'floating',
+      readonly: 1
     });
 
     tinymce.init({
-        selector: ".editableMCE",
-        plugins: 'advlist autolink lists link image charmap print preview hr anchor pagebreak',
-        toolbar_mode: 'floating',
+      selector: ".editableMCE",
+      plugins: 'advlist autolink lists link image charmap print preview hr anchor pagebreak',
+      toolbar_mode: 'floating',
 
     });
   </script>

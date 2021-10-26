@@ -6,10 +6,11 @@ use App\Http\Controllers\API\KelasController;
 use App\Http\Controllers\API\KontenDokumenController;
 use App\Http\Controllers\API\KontenVideoController;
 use App\Http\Controllers\API\AuthController;
-use App\Http\Controllers\API\DownloadController;
+use App\Http\Controllers\API\DownloadControler;
 use App\Http\Controllers\API\ViewController;
 use App\Http\Controllers\API\ArtikelController;
 use App\Http\Controllers\API\IklanController;
+use App\Http\Controllers\API\JobChannelController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\Route;
@@ -54,7 +55,6 @@ Route::get('/artikel/search/{judul}', [ArtikelController::class, 'search']);
 Route::post('/artikel/store', [ArtikelController::class, 'store']);
 Route::put('artikel/update/{id}', [ArtikelController::class, 'update']);
 Route::delete('artikel/delete/{id}', [ArtikelController::class, 'destroy']);
-Route::get('artikel/new', [ArtikelController::class, 'latest_article']);
 
 //Route Iklan
 Route::get('/iklan', [IklanController::class, 'index']);
@@ -64,12 +64,20 @@ Route::get('/iklan/{id}/download', [IklanController::class, 'download']);
 Route::get('/iklan/{id}/view', [IklanController::class, 'view']);
 Route::resource('iklan', IklanController::class);
 
+//Route JobChannel
+Route::get('/jobChannel', [JobChannelController::class, 'index']);
+Route::post('/jobChannel', [JobChannelController::class, 'store']);
+Route::get('/jobChannel/{id}', [JobChannelController::class, 'show']);
+Route::get('/jobChannel/{id}/download', [JobChannelController::class, 'download']);
+Route::get('/jobChannel/{id}/view', [JobChannelController::class, 'view']);
+Route::resource('iklan', JobChannelController::class);
+
 // Download Route
-Route::get('download/{filename}', [DownloadController::class, 'index']);
+Route::get('download/{filename}', [DownloadControler::class, 'index']);
 Route::get('/dokumen/{id}/download', [KontenDokumenController::class, 'download']);
 Route::get('/dokumen/{id}/view', [KontenDokumenController::class, 'view']);
 Route::get('view/{filename}', [ViewController::class, 'index']);
-Route::get('download_images/{filename}', [DownloadController::class, 'index_images']);
+Route::get('view2/{filename}', [ViewController::class, 'index2']);
 
 // Protected routes
 Route::group(['middleware' => ['auth:sanctum']], function () {
