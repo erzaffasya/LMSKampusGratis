@@ -27,7 +27,7 @@
                 <td class="align-middle text-center">
                   <span class="text-secondary text-xs font-weight-bold">{{ $loop->iteration }}</span>
                 </td>
-                <td class="align-middle text-center text-sm">
+                <td class="align-middle text-center ">
                   <div class="position-relative">
                       <img src="{{ asset( $item->gambar) }}" width="100" class="img-fluid shadow border-radius-xl">
                   </div>
