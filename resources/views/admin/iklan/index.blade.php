@@ -16,20 +16,16 @@
           <table id="datatable-search" class="table align-items-center mb-0">
             <thead>
               <tr>
-                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">No</th>
+                <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">No</th>
                 <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Gambar</th>
-                <th class="text-end text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Aksi</th>
+                <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Aksi</th>
               </tr>
             </thead>
             <tbody>
               @foreach ($iklan as $item)
               <tr>
-                <td>
-                  <div class="d-flex px-2 py-1">
-                    <div class="d-flex flex-column justify-content-center">
-                      <p class="text-xs font-weight-bold mb-0">{{ $loop->iteration }}</p>
-                    </div>
-                  </div>
+                <td class="align-middle text-center">
+                  <span class="text-secondary text-xs font-weight-bold">{{ $loop->iteration }}</span>
                 </td>
                 <td class="align-middle text-center text-sm">
                   <div class="position-relative">
@@ -37,7 +33,7 @@
                   </div>
                 </td>
                 <td>
-                  <div class="ms-auto text-end">
+                  <div class="ms-auto text-center">
                     <form action="{{route('iklan.destroy', $item->id)}}" method="POST" style="display: inline">
                       @csrf
                       @method("DELETE")

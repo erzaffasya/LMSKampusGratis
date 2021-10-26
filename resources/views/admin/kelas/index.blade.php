@@ -18,31 +18,27 @@
 
               <thead>
                 <tr>
-                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">No</th>
-                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Nama</th>
+                  <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">No</th>
+                  <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Nama</th>
                   <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Deskripsi</th>
-                  <th class="text-end text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Aksi</th>
+                  <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Aksi</th>
                 </tr>
               </thead>
 
               <tbody>
                 @foreach ($kelas as $item)
                 <tr>
-                  <td>
-                    <div class="d-flex px-2 py-1">
-                      <div class="d-flex flex-column justify-content-center">
-                        <p class="text-xs font-weight-bold mb-0">{{ $loop->iteration }}</p>
-                      </div>
-                    </div>
-                  </td>
-                  <td>
+                    <td class="align-middle text-center">
+                      <span class="text-secondary text-xs font-weight-bold">{{ $loop->iteration }}</span>
+                    </td>
+                  <td class="align-middle text-center">
                     <p class="text-xs font-weight-bold mb-0">{{ $item->nama }}</p>
                   </td>
                   <td class="align-middle text-center">
                     <span class="text-secondary text-xs font-weight-bold">{!! $item->deskripsi !!}</span>
                   </td>
                   <td>
-                    <div class="ms-auto text-end">
+                    <div class="ms-auto text-center">
                       <form action="{{route('kelas.destroy', $item->id)}}" method="POST" style="display: inline">
                         @csrf
                         @method("DELETE")

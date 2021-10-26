@@ -16,11 +16,11 @@
           <table id="datatable-search" class="table align-items-center mb-0">
             <thead>
               <tr>
-                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">No</th>
-                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Nama</th>
+                <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">No</th>
+                <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Nama</th>
                 <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Gambar</th>
                 <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Deskripsi</th>
-                <th class="text-end text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Aksi</th>
+                <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Aksi</th>
               </tr>
             </thead>
             <tbody>
@@ -43,7 +43,7 @@
                   <span class="text-secondary text-xs font-weight-bold">{!! $item->deskripsi !!}</span>
                 </td>
                 <td>
-                  <div class="ms-auto text-end">
+                  <div class="ms-auto text-center">
                     <form action="{{route('artikel.destroy', $item->id)}}" method="POST" style="display: inline">
                       @csrf
                       @method("DELETE")

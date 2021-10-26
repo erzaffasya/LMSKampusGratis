@@ -27,7 +27,7 @@
                       <i class="fas fa-landmark opacity-10"></i>
                     </div>
                   </div>
-                  <div class="card-body pt-0 p-3 text-center">
+                  <div class="card-body pt-0 p-3 ">
                     <h6 class="text-center mb-0">Konten Video</h6>
                     {{-- <span class="text-xs">
                       
@@ -48,7 +48,7 @@
                       <i class="fab fa-paypal opacity-10"></i>
                     </div>
                   </div>
-                  <div class="card-body pt-0 p-3 text-center">
+                  <div class="card-body pt-0 p-3 ">
                     <h6 class="text-center mb-0">Konten Dokumen</h6>
                     <hr class="horizontal dark my-3">
                     <h5 class="mb-0">
@@ -65,22 +65,71 @@
       </div>
     </div>
 
-    <div class="col-md-6 mt-4">
+    {{-- BLABLA --}}
+    <div class="col-md-6 ">
+      {{-- <div class="col-xl-12"> --}}
       <div class="card">
-        <div class="card-header pb-0 px-3">
-          {{-- <h6 class="mb-0">Tambah Data</h6> --}}
+        <div class="card-header d-flex pb-0 p-3">
+          <h6 class="my-auto">Tambah Data</h6>
+          <div class="nav-wrapper position-relative ms-auto w-50">
+            <ul class="nav nav-pills nav-fill p-1" role="tablist">
+              <li class="nav-item">
+                <a class="nav-link mb-0 px-0 py-1 active" data-bs-toggle="tab" href="#cam1" role="tab" aria-controls="cam1" aria-selected="true">
+                  Konten Video
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link mb-0 px-0 py-1" data-bs-toggle="tab" href="#cam2" role="tab" aria-controls="cam2" aria-selected="false">
+                  Konten Dokumen
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
-        <ul class="nav nav-tabs" id="myTab" role="tablist">
-          <li class="nav-item" role="presentation">
-            <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Konten Dokumen</button>
-          </li>
-          <li class="nav-item" role="presentation">
-            <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Konten Video</button>
-          </li>
-        </ul>
-        <div class="tab-content" id="myTabContent">
-          <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-            <div class="card-body">
+        <div class="card-body p-3 mt-2">
+          <div class="tab-content" id="v-pills-tabContent">
+            {{-- <div class="" style="background-image: url('../../assets/img/bg-smart-home-1.jpg'); background-size:cover;"> --}}
+            <div class="card-body tab-pane fade show position-relative active  border-radius-lg" id="cam1" role="tabpanel" aria-labelledby="cam1">
+              <form role="form text-left" action="{{route('kontenVideo.store')}}" method="POST" enctype="multipart/form-data">
+                @csrf
+                <div class="mb-3">
+                  <label for="exampleFormControlSelect1">Judul</label>
+                  <input type="text" class="form-control" name="judul" placeholder="Masukkan Judul">
+                </div>
+                <div class="mb-3">
+                  <label for="exampleFormControlSelect1">Deskripsi</label>
+                  <textarea name="deskripsi" rows="11" class="editableMCE"> </textarea>
+                </div>
+
+                <div class="mb-3">
+                  <label for="exampleFormControlSelect1">Link</label>
+                  <input type="text" class="form-control" name="link" placeholder="Masukkan Link">
+                </div>
+
+                <div class="mb-3">
+                  <label for="exampleFormControlSelect1">BAB</label>
+                  <input type="number" class="form-control" name="bab">
+                </div>
+
+                <div class="mb-3">
+                  <label for="exampleFormControlSelect1">Kelas</label>
+                  <select class="form-control" id="exampleFormControlSelect1" disabled>
+                    @foreach ($kelasselect as $item)
+                    <option value="{{$item->id}}" @if ($item->id == $kelas->id)
+                      selected
+                      @endif>{{$item->nama}}</option>
+                    @endforeach
+                  </select>
+                  <input name="kelas_id" value="{{$item->id}}" type="hidden">
+                </div>
+
+                <div class="text-center">
+                  <button type="submit" class="btn bg-gradient-dark w-100 my-4 mb-2">Submit</button>
+                </div>
+              </form>
+            </div>
+
+            <div class="card-body tab-pane fade position-relative  border-radius-lg" id="cam2" role="tabpanel" aria-labelledby="cam2">
               <form role="form text-left" action="{{route('kontenDokumen.store')}}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="mb-3">
@@ -121,52 +170,11 @@
               </form>
             </div>
           </div>
-          <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-            <div class="card-body">
-              <form role="form text-left" action="{{route('kontenVideo.store')}}" method="POST" enctype="multipart/form-data">
-                @csrf
-                <div class="mb-3">
-                  <label for="exampleFormControlSelect1">Judul</label>
-                  <input type="text" class="form-control" name="judul" placeholder="Masukkan Judul">
-                </div>
-                <div class="mb-3">
-                  <label for="exampleFormControlSelect1">Deskripsi</label>
-                  <textarea name="deskripsi" rows="11" class="editableMCE"> </textarea>
-                </div>
-
-                <div class="mb-3">
-                  <label for="exampleFormControlSelect1">Link</label>
-                  <input type="text" class="form-control" name="link" placeholder="Masukkan Link">
-                </div>
-
-                <div class="mb-3">
-                  <label for="exampleFormControlSelect1">BAB</label>
-                  <input type="number" class="form-control" name="bab">
-                </div>
-
-                <div class="mb-3">
-                  <label for="exampleFormControlSelect1">Kelas</label>
-                  <select class="form-control" id="exampleFormControlSelect1" disabled>
-                    @foreach ($kelasselect as $item)
-                    <option value="{{$item->id}}" @if ($item->id == $kelas->id)
-                      selected
-                      @endif>{{$item->nama}}</option>
-                    @endforeach
-                  </select>
-                  <input name="kelas_id" value="{{$item->id}}" type="hidden">
-                </div>
-
-                <div class="text-center">
-                  <button type="submit" class="btn bg-gradient-dark w-100 my-4 mb-2">Submit</button>
-                </div>
-              </form>
-            </div>
-          </div>
         </div>
       </div>
     </div>
   </div>
-  
+
 
 
   @push('scripts')
