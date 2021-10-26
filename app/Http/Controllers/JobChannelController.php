@@ -37,7 +37,7 @@ class JobChannelController extends Controller
         } else {
             $file_name = null;
         }
-        jobChannel::create([
+        JobChannel::create([
             'posisi_pekerjaan' => $request->posisi_pekerjaan,
             'nama_perusahaan' => $request->nama_perusahaan,
             'gaji' => $request->gaji,
@@ -63,7 +63,7 @@ class JobChannelController extends Controller
     {
         $jobChannel = JobChannel::find($id);
  
-        return view('admin.JobChannel.edit', compact('jobChannel'));
+        return view('admin.jobChannel.edit', compact('jobChannel'));
     }
 
     public function update(Request $request, $id)
@@ -79,8 +79,9 @@ class JobChannelController extends Controller
         if (isset($request->foto)){
             $extention = $request->foto->extension();
             $file_name = time().'.'.$extention;
+            $txt = "storage/job-channel/". $file_name;
             $request->foto->storeAs('public/job-channel', $file_name);
-            $jobChannel->foto = $file_name;
+            $jobChannel->foto = $txt;
         }else{}
         $jobChannel->save();
 

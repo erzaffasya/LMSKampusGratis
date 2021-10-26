@@ -65,8 +65,9 @@ class IklanController extends Controller
         if (isset($request->gambar)){
             $extention = $request->gambar->extension();
             $file_name = time().'.'.$extention;
+            $txt = "storage/images/". $file_name;
             $request->gambar->storeAs('public/images', $file_name);
-            $iklan->gambar = $file_name;
+            $iklan->gambar = $txt;
         }else{}
 
         $iklan->save();
