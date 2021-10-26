@@ -30,7 +30,7 @@ class KelasController extends Controller
             'deskripsi' => $request->deskripsi,
         ]);
         return redirect()->route('kelas.index')
-            ->with('success', 'kelas Berhasil Ditambahkan');
+            ->with('success', 'Kelas Berhasil Ditambahkan');
     }
 
     public function show($id)
@@ -67,6 +67,6 @@ class KelasController extends Controller
         Kelas::where('id', $id)->delete();
 
         return redirect()->route('kelas.index')
-            ->with('delete', 'kelas Berhasil Dihapus');
+            ->with('delete', 'Kelas Berhasil Dihapus');
     }
 }

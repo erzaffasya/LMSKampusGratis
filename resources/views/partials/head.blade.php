@@ -17,9 +17,10 @@
   <!-- CSS Files -->
   <link id="pagestyle" href="{{asset('assets/css/soft-ui-dashboard.css?v=1.0.4')}}" rel="stylesheet" />
 
-    <link href="{{asset('css/app.css')}}" rel="stylesheet" />
+  {{-- noty --}}
+  <link href="{{asset('css/app.css')}}" rel="stylesheet" />
 
-    <script src="https://cdn.tiny.cloud/1/pbt8hv1pilzu9hy3yh33hvz7bnbdtjda34vxywwge56tcjou/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
-    @stack('css')
+  <script src="https://cdn.tiny.cloud/1/pbt8hv1pilzu9hy3yh33hvz7bnbdtjda34vxywwge56tcjou/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+  @stack('css')
 </head>
 
