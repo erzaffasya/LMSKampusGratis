@@ -1,12 +1,12 @@
 <x-app-layout>
-
   <div class="row">
-    <div class="col-md-6 mt-4">
-      <div class="card h-100 mb-4">
-        <div class="card-header pb-0 px-3">
-          <h6 class="mb-0">Detail {{$kelas->nama}}</h6>
+    <div class="col-6">
+      <div class="card mb-4">
+        <div class="card-header pb-0">
+          <h3 class="text-center">Detail {{$kelas->nama}}</h3>
         </div>
         <div class="row px-xl-5 px-sm-4 px-3">
+
           <div class="card-body">
             <div class="mb-3">
               <label for="exampleFormControlSelect1">Nama Kelas</label>
@@ -14,8 +14,11 @@
             </div>
             <div class="mb-3">
               <label for="exampleFormControlSelect1">Deskripsi Kelas</label>
-              <input type="text" class="form-control" name="deskripsi" placeholder="Deskripsi" value="{{$kelas->deskripsi}}" readonly>
+              <textarea name="deskripsi" class="nonEditableMCE" rows="11"> 
+                {{$kelas->deskripsi}}
+              </textarea>
             </div>
+
             <div class="row">
               <div class="col-md-6">
                 <div class="card">
@@ -69,10 +72,10 @@
         </div>
         <ul class="nav nav-tabs" id="myTab" role="tablist">
           <li class="nav-item" role="presentation">
-            <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Konten Video</button>
+            <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Konten Dokumen</button>
           </li>
           <li class="nav-item" role="presentation">
-            <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Konten Dokumen</button>
+            <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Konten Video</button>
           </li>
         </ul>
         <div class="tab-content" id="myTabContent">
@@ -86,7 +89,7 @@
                 </div>
                 <div class="mb-3">
                   <label for="exampleFormControlSelect1">Deskripsi</label>
-                  <input type="text" class="form-control" name="deskripsi" placeholder="Masukkan Deskripsi">
+                  <textarea name="deskripsi" class="editableMCE" rows="11"> </textarea>
                 </div>
   
                 <div class="mb-3">
@@ -102,14 +105,14 @@
   
                 <div class="mb-3">
                   <label for="exampleFormControlSelect1">Kelas</label>
-                  <select class="form-control" name="kelas_id" id="exampleFormControlSelect1" disabled>
+                  <select class="form-control" id="exampleFormControlSelect1" disabled>
                     @foreach ($kelasselect as $item)
                     <option value="{{$item->id}}" @if ($item->id == $kelas->id)
                         selected
                     @endif>{{$item->nama}}</option>
-                    @endforeach
-                    
+                    @endforeach                    
                   </select>
+                  <input name="kelas_id" value="{{$item->id}}" type="hidden">
                 </div>
   
                 <div class="text-center">
@@ -120,7 +123,7 @@
           </div>
           <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
             <div class="card-body">
-              <form role="form text-left" action="{{route('kontenVidio.store')}}" method="POST" enctype="multipart/form-data">
+              <form role="form text-left" action="{{route('kontenVideo.store')}}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="mb-3">
                   <label for="exampleFormControlSelect1">Judul</label>
@@ -128,7 +131,7 @@
                 </div>
                 <div class="mb-3">
                   <label for="exampleFormControlSelect1">Deskripsi</label>
-                  <input type="text" class="form-control" name="deskripsi" placeholder="Masukkan Deskripsi">
+                  <textarea name="deskripsi" rows="11" class="editableMCE"> </textarea>
                 </div>
   
                 <div class="mb-3">
@@ -143,14 +146,14 @@
   
                 <div class="mb-3">
                   <label for="exampleFormControlSelect1">Kelas</label>
-                  <select class="form-control" name="kelas_id" id="exampleFormControlSelect1">
+                  <select class="form-control"  id="exampleFormControlSelect1" disabled>
                     @foreach ($kelasselect as $item)
                     <option value="{{$item->id}}" @if ($item->id == $kelas->id)
                         selected
                     @endif>{{$item->nama}}</option>
-                    @endforeach
-                    
+                    @endforeach                    
                   </select>
+                  <input name="kelas_id" value="{{$item->id}}" type="hidden">
                 </div>
   
                 <div class="text-center">
@@ -160,14 +163,57 @@
             </div>
           </div>
 
-        </div>
-        <div class="row px-xl-5 px-sm-4 px-3">
-          <div class="card-body">
-          
+            <div class="mb-3" >
+
+              <table>
+                <thead>
+                  <th class="text-left"> Konten Video </th>
+                  <th> Konten Dokumen </th>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="text-right">
+                      <ul>
+                        @foreach ($kontenVideo as $item)
+                        <li>{{$item->judul}}</li>
+                        @endforeach
+                      </ul>
+                    </td>
+                    <td>
+                      <ul>
+                        @foreach ($kontenDokumen as $item)
+                        <li>{{$item->judul}}</li>
+                        @endforeach
+                      </ul>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
           </div>
         </div>
       </div>
     </div>
-    
   </div>
+
+
+  @push('scripts')
+  <script>
+tinymce.init({
+        selector: ".nonEditableMCE",
+        plugins: 'advlist autolink lists link image charmap print preview hr anchor pagebreak',
+        toolbar_mode: 'floating',
+        readonly : 1
+    });
+
+    tinymce.init({
+        selector: ".editableMCE",
+        plugins: 'advlist autolink lists link image charmap print preview hr anchor pagebreak',
+        toolbar_mode: 'floating',
+
+    });
+  </script>
+  @endpush
+
 </x-app-layout>

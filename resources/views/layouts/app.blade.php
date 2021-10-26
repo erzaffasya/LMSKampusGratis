@@ -20,6 +20,7 @@
       
        <!-- isi konten -->
         {{$slot}}
+        @yield('content')
        <!-- end isi konten -->
 
       <!-- footer -->

@@ -20,7 +20,7 @@
 
               <table>
                 <thead>
-                  <th class="text-left"> Konten Vidio </th>
+                  <th class="text-left"> Konten Video </th>
                   <th> Konten Dokumen </th>
                 </thead>
                 <tbody>

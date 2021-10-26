@@ -1,5 +1,5 @@
 <?php
-use App\Http\Controllers\KontenVidioController;
+use App\Http\Controllers\KontenVideoController;
 use App\Http\Controllers\KontenDokumenController;
 use App\Http\Controllers\KelasController;
 use App\Http\Controllers\IklanController;
@@ -28,9 +28,9 @@ Route::get('/form', function () {
 Route::get('/tab', function () {
     return view('tab');
 })->name('form');
-// Route::get('/konten-vidio', function () {
-//     return view('admin.kontenVidio.index');
-// })->name('konten-vidio');
+// Route::get('/konten-Video', function () {
+//     return view('admin.kontenVideo.index');
+// })->name('konten-Video');
 
 // Route::get('/konten-dokumen', function () {
 //     return view('admin.kontenDokumen.index');
@@ -40,7 +40,7 @@ Route::get('/tab', function () {
 //     return view('admin.kelas.index');
 // })->name('kelas');
 
-Route::resource('kontenVidio', KontenVidioController::class);
+Route::resource('kontenVideo', KontenVideoController::class);
 Route::resource('kontenDokumen', KontenDokumenController::class);
 Route::resource('kelas', KelasController::class);
 Route::resource('artikel', ArtikelController::class);

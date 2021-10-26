@@ -14,7 +14,7 @@
         </div>
         <div class="card-body px-0 pt-0 pb-2">
           <div class="table-responsive p-0">
-            <table id="myTable" class="table align-items-center mb-0">
+            <table id="datatable-search" class="table align-items-center mb-0">
               <thead>
                 <tr>
                   <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">No</th>
@@ -56,9 +56,9 @@
                       <form action="{{route('kontenDokumen.destroy', $item->id)}}" method="POST" style="display: inline">
                         @csrf
                         @method("DELETE")
-                        <button type="submit" class="btn btn-link text-danger text-gradient px-3 mb-0"><i class="far fa-trash-alt me-2">Delete</i></button>
+                        <button type="submit" class="btn btn-link text-danger text-gradient px-3 mb-0"><i class="fas fa-trash text-secondary"></i></button>
                       </form>
-                      <a class="btn btn-link text-dark px-3 mb-0" href="{{route('kontenDokumen.edit', $item->id)}}"><i class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i>Edit</a>
+                      <a class="btn btn-link text-dark px-3 mb-0" href="{{route('kontenDokumen.edit', $item->id)}}"><i class="fas fa-user-edit text-secondary"></i></a>
                     </div>
                   </td>
                 </tr>
@@ -72,8 +72,9 @@
   </div>
   @push('scripts')
   <script>
-    $(document).ready(function() {
-      $('#myTable').DataTable();
+    const dataTableSearch = new simpleDatatables.DataTable("#datatable-search", {
+      searchable: true,
+      fixedHeight: true
     });
   </script>
   @endpush

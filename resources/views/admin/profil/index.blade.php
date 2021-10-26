@@ -13,7 +13,7 @@
       </div>
       <div class="card">
         <div class="table-responsive">
-          <table class="table align-items-center mb-0">
+          <table id="datatable-search" class="table align-items-center mb-0">
             <thead>
               <tr>
                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">No</th>
@@ -47,9 +47,9 @@
                     <form action="{{route('profil.destroy', $item->id)}}" method="POST" style="display: inline">
                       @csrf
                       @method("DELETE")
-                      <button type="submit" class="btn btn-link text-danger text-gradient px-3 mb-0"><i class="far fa-trash-alt me-2">Delete</i></button>
+                      <button type="submit" class="btn btn-link text-danger text-gradient px-3 mb-0"><i class="fas fa-trash text-secondary"></i></button>
                     </form>
-                    <a class="btn btn-link text-dark px-3 mb-0" href="{{route('profil.edit', $item->id)}}"><i class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i>Edit</a>
+                    <a class="btn btn-link text-dark px-3 mb-0" href="{{route('profil.edit', $item->id)}}"><i class="fas fa-user-edit text-secondary"></i></a>
                   </div>
                 </td>
               </tr>
@@ -61,5 +61,13 @@
     </div>
   </div>
 
+  @push('scripts')
+  <script>
+    const dataTableSearch = new simpleDatatables.DataTable("#datatable-search", {
+      searchable: true,
+      fixedHeight: true
+    });
+  </script>
+  @endpush
 
 </x-app-layout>
