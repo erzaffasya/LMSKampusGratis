@@ -6,6 +6,7 @@ use App\Http\Controllers\IklanController;
 use App\Http\Controllers\ArtikelController;
 use App\Http\Controllers\ProfilController;
 use App\Http\Controllers\JobChannelController;
+use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,7 +19,7 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+/*
 Route::get('/', function () {
     return view('admin.index');
 })->name('dashboard');
@@ -28,15 +29,37 @@ Route::get('/form', function () {
 Route::get('/tab', function () {
     return view('tab');
 })->name('form');
+*/
+// Route::get('/konten-Video', function () {
+//     return view('admin.kontenVideo.index');
+// })->name('konten-Video');
 
-Route::get('/login', function () {
-    return view('auth.login');
-})->name('login');
-Route::get('/daftar', function () {
-    return view('auth.daftar');
-})->name('daftar');
+// Route::get('/konten-dokumen', function () {
+//     return view('admin.kontenDokumen.index');
+// })->name('konten-dokumen');
 
+// Route::get('/kelas', function () {
+//     return view('admin.kelas.index');
+// })->name('kelas');
+Route::get('/', [AuthController::class, 'showFormLogin'])->name('login');
+Route::get('login', [AuthController::class, 'showFormLogin'])->name('login');
+Route::post('login', [AuthController::class, 'login']);
+Route::get('register', [AuthController::class, 'showFormRegister'])->name('register');
+Route::post('register', [AuthController::class, 'register']);
 
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('/', function () {
+        return view('admin.index');
+    })->name('dashboard');
+    Route::get('/form', function () {
+        return view('form');
+    })->name('form');
+    Route::get('/tab', function () {
+        return view('tab');
+    })->name('form');
+    Route::get('logout', [AuthController::class, 'logout'])->name('logout');
+ 
+});
 
 Route::resource('kontenVideo', KontenVideoController::class);
 Route::resource('kontenDokumen', KontenDokumenController::class);

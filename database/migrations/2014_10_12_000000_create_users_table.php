@@ -16,13 +16,16 @@ class CreateUsersTable extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('username',15)->unique();
-            $table->string('email');
+            $table->string('email')->unique();
             $table->string('password');
-            $table->enum('level', ['admin', 'user']);
-            $table->rememberToken();
             $table->timestamps();
         });
+
+        DB::table('users')->insert([
+            'name' => 'admin',
+            'email' => 'learning.kg1@gmail.com',
+            'password' => bcrypt('kampusgratis'),
+        ]);
     }
 
     /**
