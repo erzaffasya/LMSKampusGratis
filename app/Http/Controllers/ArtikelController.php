@@ -6,6 +6,11 @@ use Illuminate\Http\Request;
 
 class ArtikelController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
     public function index()
     {
         $artikel = Artikel::all();

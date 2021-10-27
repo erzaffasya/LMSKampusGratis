@@ -4,6 +4,7 @@
   <script src="{{asset('assets/js/plugins/perfect-scrollbar.min.js')}}"></script>
   <script src="{{asset('assets/js/plugins/smooth-scrollbar.min.js')}}"></script>
   <script src="{{asset('assets/js/plugins/datatables.js')}}"></script>
+  <script src="{{asset('assets/js/plugins/sweetalert.min.js')}}"></script>
   
   <!-- Kanban scripts -->
   <script src="{{asset('assets/js/plugins/dragula/dragula.min.js')}}"></script>

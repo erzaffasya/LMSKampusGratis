@@ -40,10 +40,10 @@
                 </td>
                 <td>
                   <div class="align-middle text-center">
-                    <form action="{{route('artikel.destroy', $item->id)}}" method="POST" style="display: inline">
+                    <form id="form-delete" action="{{route('artikel.destroy', $item->id)}}" method="POST" style="display: inline">
                       @csrf
                       @method("DELETE")
-                      <button type="submit" class="btn btn-link text-danger text-gradient px-3 mb-0"><i class="fas fa-trash text-secondary"></i></button>
+                      <button type="submit" class="btn btn-link text-danger text-gradient px-3 mb-0" onclick="return soft.showSwal('warning-message')" ><i class="fas fa-trash text-secondary"></i></button>
                     </form>
                     <a class="btn btn-link text-dark px-3 mb-0" href="{{route('artikel.edit', $item->id)}}"><i class="fas fa-user-edit text-secondary"></i></a>
                   </div>
@@ -64,5 +64,20 @@
       fixedHeight: true
     });
   </script>
+  <script>
+    var deleteLinks = document.querySelectorAll('.delete');
+
+for (var i = 0; i < deleteLinks.length; i++) {
+    deleteLinks[i].addEventListener('click', function(event) {
+        event.preventDefault();
+
+        var choice = confirm(this.getAttribute('showSwal'));
+
+        if (choice) {
+            window.location.href = this.getAttribute('href');
+        }
+    });
+}
+</script>
   @endpush
 </x-app-layout>
