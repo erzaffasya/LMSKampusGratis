@@ -43,7 +43,7 @@ class ArtikelController extends Controller
             'gambar' => $txt,
         ]);
         return redirect()->route('artikel.index')
-            ->with('success', 'artikel Berhasil Ditambahkan');
+            ->with('success', 'Artikel Berhasil Ditambahkan');
     }
 
     public function show($id)
@@ -88,6 +88,6 @@ class ArtikelController extends Controller
         artikel::where('id', $id)->delete();
 
         return redirect()->route('artikel.index')
-            ->with('delete', 'artikel Berhasil Dihapus');
+            ->with('delete', 'Artikel Berhasil Dihapus');
     }
 }

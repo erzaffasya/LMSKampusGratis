@@ -26,24 +26,20 @@
             <tbody>
               @foreach ($artikel as $item)
               <tr>
-                <td>
-                  <div class="d-flex px-2 py-1">
-                    <div class="d-flex flex-column justify-content-center">
-                      <p class="text-xs font-weight-bold mb-0">{{ $loop->iteration }}</p>
-                    </div>
-                  </div>
+                <td class="align-middle text-center">
+                  <span class="text-secondary text-xs font-weight-bold">{{ $loop->iteration }}</span>
                 </td>
                 <td>
-                  <p class="text-xs font-weight-bold mb-0">{{ $item->judul }}</p>
+                  <p class="align-middle text-center">{{ $item->judul }}</p>
                 </td>
-                <td class="align-middle text-center text-sm">
+                <td class="align-middle text-center">
                   <img src="{{ asset( $item->gambar) }}" width="100" class="img-fluid shadow border-radius-xl">
                 </td>
                 <td class="align-middle text-center">
                   <span class="text-secondary text-xs font-weight-bold">{!! $item->deskripsi !!}</span>
                 </td>
                 <td>
-                  <div class="ms-auto text-center">
+                  <div class="align-middle text-center">
                     <form action="{{route('artikel.destroy', $item->id)}}" method="POST" style="display: inline">
                       @csrf
                       @method("DELETE")

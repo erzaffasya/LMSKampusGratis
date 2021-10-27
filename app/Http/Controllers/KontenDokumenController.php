@@ -49,7 +49,7 @@ class KontenDokumenController extends Controller
             'kelas_id' => $request->kelas_id,
         ]);
         return redirect()->route('kontenDokumen.index')
-            ->with('success', 'kontenDokumen Berhasil Ditambahkan');
+            ->with('success', 'Konten Dokumen Berhasil Ditambahkan');
     }
 
     public function show($id)
@@ -89,7 +89,7 @@ class KontenDokumenController extends Controller
         $kontenDokumen->save();
 
         return redirect()->route('kontenDokumen.index')
-        ->with('edit', 'pengumuman Berhasil Diedit');
+        ->with('edit', 'Konten Dokumen Berhasil Diedit');
     }
 
     public function destroy($id)
@@ -97,6 +97,6 @@ class KontenDokumenController extends Controller
         KontenDokumen::where('id', $id)->delete();
 
         return redirect()->route('kontenDokumen.index')
-            ->with('delete', 'kontenDokumen Berhasil Dihapus');
+            ->with('delete', 'Konten Dokumen Berhasil Dihapus');
     }
 }

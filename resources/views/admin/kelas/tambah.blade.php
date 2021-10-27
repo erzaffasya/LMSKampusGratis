@@ -20,8 +20,10 @@
 
                 </textarea>
               </div>
-
-
+              <label class="mt-4">Project Description</label>
+            <p class="form-text text-muted text-xs ms-1">
+              This is how others will learn about the project, so make it good!
+            </p>
               <div class="text-center">
                 <button type="submit" class="btn bg-gradient-dark w-100 my-4 mb-2">Submit</button>
               </div>

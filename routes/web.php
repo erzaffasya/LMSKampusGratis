@@ -28,17 +28,15 @@ Route::get('/form', function () {
 Route::get('/tab', function () {
     return view('tab');
 })->name('form');
-// Route::get('/konten-Video', function () {
-//     return view('admin.kontenVideo.index');
-// })->name('konten-Video');
 
-// Route::get('/konten-dokumen', function () {
-//     return view('admin.kontenDokumen.index');
-// })->name('konten-dokumen');
+Route::get('/login', function () {
+    return view('auth.login');
+})->name('login');
+Route::get('/daftar', function () {
+    return view('auth.daftar');
+})->name('daftar');
 
-// Route::get('/kelas', function () {
-//     return view('admin.kelas.index');
-// })->name('kelas');
+
 
 Route::resource('kontenVideo', KontenVideoController::class);
 Route::resource('kontenDokumen', KontenDokumenController::class);

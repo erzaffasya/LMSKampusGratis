@@ -11,6 +11,7 @@ use App\Http\Controllers\API\ViewController;
 use App\Http\Controllers\API\ArtikelController;
 use App\Http\Controllers\API\IklanController;
 use App\Http\Controllers\API\JobChannelController;
+use App\Http\Controllers\API\ProfilController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\Route;
@@ -71,6 +72,12 @@ Route::get('/jobChannel/{id}', [JobChannelController::class, 'show']);
 Route::get('/jobChannel/{id}/download', [JobChannelController::class, 'download']);
 Route::get('/jobChannel/{id}/view', [JobChannelController::class, 'view']);
 Route::resource('iklan', JobChannelController::class);
+
+//Route Profil
+Route::get('/profil', [ProfilController::class, 'index']);
+Route::post('/profil', [ProfilController::class, 'store']);
+Route::get('/profil/{id}', [ProfilController::class, 'show']);
+Route::get('/profil/{id}/view', [PofilController::class, 'view']);
 
 // Download Route
 Route::get('download/{filename}', [DownloadControler::class, 'index']);

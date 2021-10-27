@@ -73,6 +73,13 @@
   }
 }
 
+.table td{
+  max-width: 30rem;
+  white-space: nowrap;
+  overflow: auto;
+  /* text-overflow: ellipsis; */
+}
+
 body {
   margin: 0;
   font-family: var(--bs-body-font-family);

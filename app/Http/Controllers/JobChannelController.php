@@ -48,7 +48,7 @@ class JobChannelController extends Controller
 
         ]);
         return redirect()->route('jobChannel.index')
-            ->with('success', 'JobChannel Berhasil Ditambahkan');
+            ->with('success', 'Job Channel Berhasil Ditambahkan');
     }
 
     public function show($id)
@@ -86,7 +86,7 @@ class JobChannelController extends Controller
         $jobChannel->save();
 
         return redirect()->route('jobChannel.index')
-        ->with('edit', 'jobChannel Berhasil Diedit');
+        ->with('edit', 'Job Channel Berhasil Diedit');
     }
 
     public function destroy($id)
@@ -94,6 +94,6 @@ class JobChannelController extends Controller
         JobChannel::where('id', $id)->delete();
 
         return redirect()->route('jobChannel.index')
-            ->with('delete', 'JobChannel Berhasil Dihapus');
+            ->with('delete', 'Job Channel Berhasil Dihapus');
     }
 }

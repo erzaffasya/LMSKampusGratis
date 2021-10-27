@@ -38,7 +38,7 @@ class KontenVideoController extends Controller
             'kelas_id' => $request->kelas_id,
         ]);
         return redirect()->route('kontenVideo.index')
-            ->with('success', 'kontenVideo Berhasil Ditambahkan');
+            ->with('success', 'Konten Video Berhasil Ditambahkan');
     }
 
     public function show($id)
@@ -67,7 +67,7 @@ class KontenVideoController extends Controller
         $kontenVideo->save();
 
         return redirect()->route('kontenVideo.index')
-        ->with('edit', 'pengumuman Berhasil Diedit');
+        ->with('edit', 'Konten Video Berhasil Diedit');
     }
 
     public function destroy($id)
@@ -75,6 +75,6 @@ class KontenVideoController extends Controller
         KontenVideo::where('id', $id)->delete();
 
         return redirect()->route('kontenVideo.index')
-            ->with('delete', 'kontenVideo Berhasil Dihapus');
+            ->with('delete', 'Konten Video Berhasil Dihapus');
     }
 }

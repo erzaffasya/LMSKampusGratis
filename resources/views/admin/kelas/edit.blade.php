@@ -1,4 +1,5 @@
 <x-app-layout>
+
   <div class="row">
     <div class="col-6">
       <div class="card mb-4">
@@ -17,7 +18,7 @@
               </div>
               <div class="mb-3">
                 <label for="exampleFormControlSelect1">Deskripsi Kelas</label>
-                <textarea rows="11">
+                <textarea rows="11" name="deskripsi">
                   {{$kelas->deskripsi}}
                 </textarea>
               </div>
@@ -40,4 +41,5 @@
    });
   </script>
   @endpush
+
 </x-app-layout>

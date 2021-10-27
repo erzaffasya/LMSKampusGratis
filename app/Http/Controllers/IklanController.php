@@ -39,7 +39,7 @@ class IklanController extends Controller
             'gambar' => $txt,
         ]);
         return redirect()->route('iklan.index')
-            ->with('success', 'iklan Berhasil Ditambahkan');
+            ->with('success', 'Iklan Berhasil Ditambahkan');
     }
 
     public function show($id)
@@ -73,7 +73,7 @@ class IklanController extends Controller
         $iklan->save();
 
         return redirect()->route('iklan.index')
-        ->with('edit', 'iklan Berhasil Diedit');
+        ->with('edit', 'Iklan Berhasil Diedit');
     }
 
     public function destroy($id)
@@ -81,6 +81,6 @@ class IklanController extends Controller
         iklan::where('id', $id)->delete();
 
         return redirect()->route('iklan.index')
-            ->with('delete', 'iklan Berhasil Dihapus');
+            ->with('delete', 'Iklan Berhasil Dihapus');
     }
 }
