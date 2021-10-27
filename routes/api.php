@@ -6,7 +6,8 @@ use App\Http\Controllers\API\KelasController;
 use App\Http\Controllers\API\KontenDokumenController;
 use App\Http\Controllers\API\KontenVideoController;
 use App\Http\Controllers\API\AuthController;
-use App\Http\Controllers\API\DownloadControler;
+use App\Http\Controllers\API\PassportAuthController;
+use App\Http\Controllers\API\DownloadController;
 use App\Http\Controllers\API\ViewController;
 use App\Http\Controllers\API\ArtikelController;
 use App\Http\Controllers\API\IklanController;
@@ -28,8 +29,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 // Public routes
-Route::post('/register', [AuthController::class, 'register']);
-Route::post('/login', [AuthController::class, 'login']);
+Route::post('/register', [PassportAuthController::class, 'register']);
+Route::post('/login', [PassportAuthController::class, 'login']);
 Route::get('/kelas', [KelasController::class, 'index']);
 Route::get('/kelas/{id}', [KelasController::class, 'show']);
 Route::get('/kelas/search/{name}', [KelasController::class, 'search']);
@@ -79,14 +80,14 @@ Route::get('/profil/{id}', [ProfilController::class, 'show']);
 Route::get('/profil/{id}/view', [PofilController::class, 'view']);
 
 // Download Route
-Route::get('download/{filename}', [DownloadControler::class, 'index']);
+Route::get('download/{filename}', [DownloadController::class, 'index']);
 Route::get('/dokumen/{id}/download', [KontenDokumenController::class, 'download']);
 Route::get('/dokumen/{id}/view', [KontenDokumenController::class, 'view']);
 Route::get('view/{filename}', [ViewController::class, 'index']);
 Route::get('view2/{filename}', [ViewController::class, 'index2']);
 
 // Protected routes
-Route::group(['middleware' => ['auth:sanctum']], function () {
+Route::group(['middleware' => ['auth:api']], function () {
     Route::post('/kelas', [KelasController::class, 'store']);
     Route::put('/kelas/{id}', [KelasController::class, 'update']);
     Route::delete('/kelas/{id}', [KelasController::class, 'destroy']);
@@ -99,6 +100,6 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
     Route::delete('/video/{id}', [KontenVideoController::class, 'destroy']);
 });
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
