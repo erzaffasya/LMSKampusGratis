@@ -1,12 +1,10 @@
 <x-app-layout>
-  <div class="row">
-    <div class="col-6">
-      <div class="card mb-4">
-        <div class="card-header pb-0">
-          <h6>Edit Data Kelas</h6>
-        </div>
-        <div class="row px-xl-5 px-sm-4 px-3">
-
+  <div class="container-fluid py-4">
+    <div class="row">
+      <div class="col-lg-9 col-12 mx-auto">
+        <div class="card card-body mt-4">
+          <h6 class="mb-0">Edit Job Channel</h6>
+          <hr class="horizontal dark my-3">
           <div class="card-body">
             <form role="form text-left" action="{{route('jobChannel.update',$jobChannel->id)}}" method="POST" enctype="multipart/form-data">
               @csrf

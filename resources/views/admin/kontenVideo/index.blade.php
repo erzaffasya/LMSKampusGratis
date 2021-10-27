@@ -7,9 +7,9 @@
             <div class="col-6 d-flex align-items-center">
               <h6 class="mb-0">Data Konten Video</h6>
             </div>
-            <div class="col-6 text-end">
+            {{-- <div class="col-6 text-end">
               <a class="btn bg-gradient-dark mb-0" href="{{route('kontenVideo.create')}}"><i class="fas fa-plus"></i>&nbsp;&nbsp;Tambah Data</a>
-            </div>
+            </div> --}}
           </div>
         </div>
         <div class="card-body px-0 pt-0 pb-2">

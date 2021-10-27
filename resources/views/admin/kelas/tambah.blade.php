@@ -1,12 +1,10 @@
-<x-app-layout>
-  <div class="row">
-    <div class="col-6">
-      <div class="card mb-4">
-        <div class="card-header pb-0">
-          <h6>Tambah Data Kelas</h6>
-        </div>
-        <div class="row px-xl-5 px-sm-4 px-3">
-
+<x-app-layout> 
+  <div class="container-fluid py-4">
+    <div class="row">
+      <div class="col-lg-9 col-12 mx-auto">
+        <div class="card card-body mt-4">
+          <h6 class="mb-0">Tambah Data Kelas</h6>
+          <hr class="horizontal dark my-3">
           <div class="card-body">
             <form role="form text-left" action="{{route('kelas.store')}}" method="POST">
               @csrf
@@ -16,16 +14,10 @@
               </div>
               <div class="mb-3">
                 <label for="exampleFormControlSelect1">Deskripsi Kelas</label>
-                <textarea name="deskripsi" rows="11">
-
-                </textarea>
+                <textarea name="deskripsi" rows="11"></textarea>
               </div>
-              <label class="mt-4">Project Description</label>
-            <p class="form-text text-muted text-xs ms-1">
-              This is how others will learn about the project, so make it good!
-            </p>
               <div class="text-center">
-                <button type="submit" class="btn bg-gradient-dark w-100 my-4 mb-2">Submit</button>
+                <button type="submit" class="btn bg-gradient-dark w-100 my-4 mb-2">Tambah</button>
               </div>
             </form>
           </div>
@@ -33,7 +25,6 @@
       </div>
     </div>
   </div>
-
   @push('scripts')
   <script>
     tinymce.init({
