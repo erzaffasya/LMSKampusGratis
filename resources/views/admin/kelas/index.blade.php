@@ -49,21 +49,6 @@
                     </div>
                   </td>
                 </tr>
-                {{-- <tr>
-                  <td>{{ $loop->iteration }}</td>
-                  <td>{{ $item->nama }}</td>
-                  <td>{!! $item->deskripsi !!}</td>
-                  <td>
-                    <div class="btn-group" role="group">
-                      <a href="{{route('kelas.edit', $item->id)}}" class="btn btn-primary"><i class="material-icons">edit</i></a>
-                      <form action="{{route('kelas.destroy', $item->id)}}" method="POST">
-                        @csrf
-                        @method("DELETE")
-                        <button type="submit" class="btn btn-danger"><i class="material-icons">delete</i></button>
-                      </form>
-                    </div>
-                  </td>
-                </tr> --}}
                 @endforeach
               </tbody>
 
