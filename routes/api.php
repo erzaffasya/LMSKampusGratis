@@ -75,7 +75,7 @@ Route::resource('iklan', JobChannelController::class);
 
 //Route Profil
 Route::get('/profil', [ProfilController::class, 'index']);
-Route::post('/profil', [PofilController::class, 'store']);
+Route::post('/profil', [ProfilController::class, 'store']);
 Route::get('/profil/{id}', [ProfilController::class, 'show']);
 Route::get('/profil/{id}/view', [PofilController::class, 'view']);
 
