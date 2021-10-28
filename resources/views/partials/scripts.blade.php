@@ -30,4 +30,5 @@
   <script src="{{asset('assets/js/soft-ui-dashboard.min.js?v=1.0.4')}}"></script>
 
   <!--<x-Alert/>-->
+  <x:notify-messages />
 @stack('scripts')

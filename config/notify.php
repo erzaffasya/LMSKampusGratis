@@ -56,6 +56,12 @@ return [
             'model'   => 'connect',
             'title'   => 'User Updated',
         ],
+        'delete' => [
+            'message' => 'Data berhasil dihapus',
+            'type'    => 'success',
+            'model'   => 'connect',
+            'title'   => 'delete',
+        ],
     ],
 
 ];

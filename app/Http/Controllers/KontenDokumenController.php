@@ -53,8 +53,9 @@ class KontenDokumenController extends Controller
             'bab' => $request->bab,
             'kelas_id' => $request->kelas_id,
         ]);
-        return redirect()->route('kontenDokumen.index')
-            ->with('success', 'Konten Dokumen Berhasil Ditambahkan');
+        notify()->success('Konten Dokumen berhasil ditambahkan!');
+        return redirect()->route('kontenDokumen.index');
+            //->with('success', 'Konten Dokumen Berhasil Ditambahkan');
     }
 
     public function show($id)
@@ -92,16 +93,16 @@ class KontenDokumenController extends Controller
         }else{}
 
         $kontenDokumen->save();
-
-        return redirect()->route('kontenDokumen.index')
-        ->with('edit', 'Konten Dokumen Berhasil Diedit');
+        notify()->success('Konten Dokumen berhasil diedit!');
+        return redirect()->route('kontenDokumen.index');
+        //->with('edit', 'Konten Dokumen Berhasil Diedit');
     }
 
     public function destroy($id)
     {
         KontenDokumen::where('id', $id)->delete();
-
-        return redirect()->route('kontenDokumen.index')
-            ->with('delete', 'Konten Dokumen Berhasil Dihapus');
+        notify()->success('Konten Dokumen berhasil dihapus!');
+        return redirect()->route('kontenDokumen.index');
+            //->with('delete', 'Konten Dokumen Berhasil Dihapus');
     }
 }

@@ -52,8 +52,9 @@ class JobChannelController extends Controller
             'foto' => $file_name,
 
         ]);
-        return redirect()->route('jobChannel.index')
-            ->with('success', 'Job Channel Berhasil Ditambahkan');
+        notify()->success('Job Channel berhasil ditambahkan!');
+        return redirect()->route('jobChannel.index');
+            //->with('success', 'Job Channel Berhasil Ditambahkan');
     }
 
     public function show($id)
@@ -89,16 +90,16 @@ class JobChannelController extends Controller
             $jobChannel->foto = $txt;
         }else{}
         $jobChannel->save();
-
-        return redirect()->route('jobChannel.index')
-        ->with('edit', 'Job Channel Berhasil Diedit');
+        notify()->success('Job Channel berhasil diedit!');
+        return redirect()->route('jobChannel.index');
+        //->with('edit', 'Job Channel Berhasil Diedit');
     }
 
     public function destroy($id)
     {
         JobChannel::where('id', $id)->delete();
-
-        return redirect()->route('jobChannel.index')
-            ->with('delete', 'Job Channel Berhasil Dihapus');
+        notify()->success('Job Channel berhasil dihapus!');
+        return redirect()->route('jobChannel.index');
+            //->with('delete', 'Job Channel Berhasil Dihapus');
     }
 }

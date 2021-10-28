@@ -2,6 +2,8 @@
 <html lang="en">
 
 @include('partials.head')
+@include('notify::components.notify')
+@notifyCss
 <body class="g-sidenav-show  bg-gray-100">
 
   <!-- sidebar -->
@@ -13,6 +15,7 @@
   <!-- Navbar -->
     @include('partials.navbar')
   <!-- End Navbar -->
+
   @if ($message = Session::get('success'))
   <div class="alert alert-success alert-dismissible fade show col-5" role="alert">
         <span class="alert-icon"><i class="ni ni-like-2"></i></span>
@@ -67,6 +70,7 @@
   
 
   @include('partials.scripts')
+  @notifyJs
 </body>
 
 </html>

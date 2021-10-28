@@ -43,8 +43,9 @@ class ProfilController extends Controller
             'no_hp' => $request->no_hp,
             'gambar' => $file_name,
         ]);
-        return redirect()->route('profil.index')
-            ->with('success', 'Data Pengguna Berhasil Ditambahkan');
+        notify()->success('Profil berhasil ditambahkan!');
+        return redirect()->route('profil.index');
+            //>with('success', 'Data Pengguna Berhasil Ditambahkan');
     }
 
     public function edit($id)
@@ -70,16 +71,16 @@ class ProfilController extends Controller
         }else{}
 
         $profil->save();
-
-        return redirect()->route('profil.index')
-        ->with('edit', 'Profil Berhasil Diedit');
+        notify()->success('Profil berhasil diedit!');
+        return redirect()->route('profil.index');
+        //->with('edit', 'Profil Berhasil Diedit');
     }
 
     public function destroy($id)
     {
         Profil::where('id', $id)->delete();
-
-        return redirect()->route('profil.index')
-            ->with('delete', 'Profil Berhasil Dihapus');
+        notify()->success('Profil berhasil dihapus!');
+        return redirect()->route('profil.index');
+            //->with('delete', 'Profil Berhasil Dihapus');
     }
 }

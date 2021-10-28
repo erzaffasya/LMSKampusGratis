@@ -34,8 +34,9 @@ class KelasController extends Controller
             'nama' => $request->nama,
             'deskripsi' => $request->deskripsi,
         ]);
-        return redirect()->route('kelas.index')
-            ->with('success', 'Kelas Berhasil Ditambahkan');
+        notify()->success('Kelas berhasil ditambahkan!');
+        return redirect()->route('kelas.index');
+            //->with('success', 'Kelas Berhasil Ditambahkan');
     }
 
     public function show($id)
@@ -62,16 +63,16 @@ class KelasController extends Controller
         $kelas->nama = $request->nama;
         $kelas->deskripsi = $request->deskripsi;
         $kelas->save();
-
-        return redirect()->route('kelas.index')
-        ->with('edit', 'Kelas Berhasil Diedit');
+        notify()->success('Kelas berhasil diedit!');
+        return redirect()->route('kelas.index');
+        //->with('edit', 'Kelas Berhasil Diedit');
     }
 
     public function destroy($id)
     {
         Kelas::where('id', $id)->delete();
-
-        return redirect()->route('kelas.index')
-            ->with('delete', 'Kelas Berhasil Dihapus');
+        notify()->success('Kelas berhasil dihapus!');
+        return redirect()->route('kelas.index');
+            //->with('delete', 'Kelas Berhasil Dihapus');
     }
 }
