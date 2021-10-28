@@ -13,12 +13,9 @@
               <input type="text" class="form-control" name="nama" placeholder="Nama" value="{{$kelas->nama}}" readonly>
             </div>
             <div class="mb-3">
-              <label for="exampleFormControlSelect1">Deskripsi Kelas</label>
-              <textarea name="deskripsi" class="nonEditableMCE" rows="11">
-              {{$kelas->deskripsi}}
-              </textarea>
-            </div>
-
+              <label for="exampleFormControlSelect1" >Deskripsi</label>
+              <textarea class="form-control" aria-label="With textarea" name="deskripsi" rows="4">{{$kelas->deskripsi}}</textarea>
+          </div>
             <div class="row">
               <div class="col-md-6">
                 <div class="card">
@@ -97,10 +94,9 @@
                   <input type="text" class="form-control" name="judul" placeholder="Masukkan Judul">
                 </div>
                 <div class="mb-3">
-                  <label for="exampleFormControlSelect1">Deskripsi</label>
-                  <textarea name="deskripsi" rows="11" class="editableMCE"> </textarea>
+                    <label for="exampleFormControlSelect1">Deskripsi</label>
+                    <textarea class="form-control" aria-label="With textarea" name="deskripsi" rows="4"></textarea>
                 </div>
-
                 <div class="mb-3">
                   <label for="exampleFormControlSelect1">Link</label>
                   <input type="text" class="form-control" name="link" placeholder="Masukkan Link">
@@ -138,7 +134,7 @@
                 </div>
                 <div class="mb-3">
                   <label for="exampleFormControlSelect1">Deskripsi</label>
-                  <textarea name="deskripsi" class="editableMCE" rows="11"> </textarea>
+                  <textarea class="form-control" aria-label="With textarea" name="deskripsi" rows="4"></textarea>
                 </div>
                 <div class="mb-3">
                   <label for="exampleFormControlSelect1">File Dokumen</label>
@@ -174,7 +170,7 @@
 
 
 
-  @push('scripts')
+  {{-- @push('scripts')
   <script>
     tinymce.init({
       selector: ".nonEditableMCE",
@@ -190,6 +186,6 @@
 
     });
   </script>
-  @endpush
+  @endpush --}}
 
 </x-app-layout>

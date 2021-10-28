@@ -18,9 +18,7 @@
               </div>
               <div class="mb-3">
                 <label for="exampleFormControlSelect1">Deskripsi</label>
-                <textarea name="deskripsi" rows="11">
-
-                </textarea>
+                <textarea class="form-control" aria-label="With textarea" name="deskripsi" rows="4"></textarea>
               </div>
               <div class="text-end">
                       <a href="javascript:history.back()" class="btn bg-gradient-danger"><i class="ni ni-bold-left"></i>&nbsp;&nbsp;Batal</a> 
@@ -33,7 +31,7 @@
     </div>
   </div>
 
-  @push('scripts')
+  {{-- @push('scripts')
   <script>
     tinymce.init({
       selector: 'textarea',
@@ -41,5 +39,5 @@
       toolbar_mode: 'floating',
    });
   </script>
-  @endpush
+  @endpush --}}
 </x-app-layout>
