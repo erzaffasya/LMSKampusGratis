@@ -43,7 +43,7 @@ class KontenVideoController extends Controller
             'kelas_id' => $request->kelas_id,
         ]);
         //notify()->success('Konten Video berhasil ditambahkan!');
-        return redirect()->route('kontenVideo.index')
+        return redirect()->route('kelas.show', $request->kelas_id)
             ->with('success', 'Konten Video Berhasil Ditambahkan');
     }
 

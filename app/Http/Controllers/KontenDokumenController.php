@@ -54,7 +54,7 @@ class KontenDokumenController extends Controller
             'kelas_id' => $request->kelas_id,
         ]);
         //notify()->success('Konten Dokumen berhasil ditambahkan!');
-        return redirect()->route('kontenDokumen.index')
+        return redirect()->route('kelas.show', $request->kelas_id)
             ->with('success', 'Konten Dokumen Berhasil Ditambahkan');
     }
 
