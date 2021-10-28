@@ -19,8 +19,9 @@
                   <label for="exampleFormControlSelect1">Gambar</label>
                   <input type="file" class="form-control" name="gambar">
                 </div>
-                <div class="text-center">
-                  <button type="submit" class="btn bg-gradient-dark w-100 my-4 mb-2">Simpan</button>
+                <div class="text-end">
+                  <button type="submit" class="btn bg-gradient-dark"><i class="fas fa-plus"></i>&nbsp;&nbsp;Simpan</button>
+                  <a href="{{route('profil.index')}}" class="btn bg-gradient-danger"><i class="ni ni-curved-next"></i>&nbsp;&nbsp;Batal</a>
                 </div>
               </form>
           </div>

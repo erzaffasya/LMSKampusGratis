@@ -124,7 +124,7 @@
                 </div>
 
                 <div class="text-center">
-                  <button type="submit" class="btn bg-gradient-dark w-100 my-4 mb-2">Submit</button>
+                  <button type="submit" class="btn bg-gradient-dark w-100 my-4 mb-2">Tambah</button>
                 </div>
               </form>
             </div>
@@ -140,13 +140,10 @@
                   <label for="exampleFormControlSelect1">Deskripsi</label>
                   <textarea name="deskripsi" class="editableMCE" rows="11"> </textarea>
                 </div>
-
                 <div class="mb-3">
                   <label for="exampleFormControlSelect1">File Dokumen</label>
-                  <br>
-                  <input type="file" class="" name="file">
+                  <input type="file" class="form-control" name="file">
                 </div>
-
                 <div class="mb-3">
                   <label for="exampleFormControlSelect1">BAB</label>
                   <input type="number" class="form-control" name="bab">
@@ -165,7 +162,7 @@
                 </div>
 
                 <div class="text-center">
-                  <button type="submit" class="btn bg-gradient-dark w-100 my-4 mb-2">Submit</button>
+                  <button type="submit" class="btn bg-gradient-dark w-100 my-4 mb-2">Tambah</button>
                 </div>
               </form>
             </div>

@@ -18,7 +18,7 @@
               </div>
               <div class="mb-3">
                 <label for="exampleFormControlSelect1">Gaji</label>
-                <input type="text" class="form-control" name="gaji" placeholder="Gaji" >
+                <input type="number" class="form-control" name="gaji" placeholder="Gaji" >
               </div>
               <div class="mb-3">
                 <label for="exampleFormControlSelect1">Bidang</label>
@@ -40,8 +40,9 @@
                 <label for="exampleFormControlSelect1">Foto</label>
                 <input type="file" class="form-control" name="foto">
               </div>               
-              <div class="text-center">
-                <button type="submit" class="btn bg-gradient-dark w-100 my-4 mb-2">Tambah</button>
+              <div class="text-end">
+                <button type="submit" class="btn bg-gradient-dark"><i class="fas fa-plus"></i>&nbsp;&nbsp;Tambah</button>
+                <a href="{{route('jobChannel.index')}}" class="btn bg-gradient-danger"><i class="ni ni-curved-next"></i>&nbsp;&nbsp;Batal</a>
               </div>
             </form>
           </div>

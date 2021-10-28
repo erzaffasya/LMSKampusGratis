@@ -22,8 +22,9 @@
 
                 </textarea>
               </div>
-              <div class="text-center">
-                <button type="submit" class="btn bg-gradient-dark w-100 my-4 mb-2">Tambah</button>
+              <div class="text-end">
+                <button type="submit" class="btn bg-gradient-dark"><i class="fas fa-plus"></i>&nbsp;&nbsp;Tambah</button>
+                <a href="{{route('artikel.index')}}" class="btn bg-gradient-danger"><i class="ni ni-curved-next"></i>&nbsp;&nbsp;Batal</a>
               </div>
             </form>
           </div>
