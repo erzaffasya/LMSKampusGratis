@@ -49,7 +49,8 @@
             </div>
 
             <div class="text-center">
-              <button type="submit" class="btn bg-gradient-dark w-100 my-4 mb-2">Submit</button>
+                          <a href="javascript:history.back()" class="btn bg-gradient-danger"><i class="ni ni-bold-left"></i>&nbsp;&nbsp;Batal</a> 
+                  <button type="submit" class="btn bg-gradient-dark"><i class="fas fa-plus"></i>&nbsp;&nbsp;Tambah</button>
             </div>
           </form>
         </div>
@@ -90,7 +91,8 @@
             </div>
 
             <div class="text-center">
-              <button type="submit" class="btn bg-gradient-dark w-100 my-4 mb-2">Submit</button>
+                          <a href="javascript:history.back()" class="btn bg-gradient-danger"><i class="ni ni-bold-left"></i>&nbsp;&nbsp;Batal</a> 
+                  <button type="submit" class="btn bg-gradient-dark"><i class="fas fa-plus"></i>&nbsp;&nbsp;Tambah</button>
             </div>
           </form>
         </div>
