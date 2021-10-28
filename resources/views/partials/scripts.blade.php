@@ -29,6 +29,6 @@
   <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
   <script src="{{asset('assets/js/soft-ui-dashboard.min.js?v=1.0.4')}}"></script>
 
-  <!--<x-Alert/>-->
-  <x:notify-messages />
+  <x-Alert/>
+  <!--<x:notify-messages />-->
 @stack('scripts')
