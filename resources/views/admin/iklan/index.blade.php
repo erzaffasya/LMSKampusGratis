@@ -50,7 +50,6 @@
       </div>
     </div>
   </div>
-
   @push('scripts')
   <script>
     const dataTableSearch = new simpleDatatables.DataTable("#datatable-search", {

@@ -84,8 +84,6 @@ class IklanController extends Controller
     public function destroy($id)
     {
         iklan::where('id', $id)->delete();
-
-        return redirect()->route('iklan.index')
-            ->with('delete', 'Iklan Berhasil Dihapus');
+        return redirect()->route('iklan.index')->with('delete', 'Iklan Berhasil Dihapus');
     }
 }
