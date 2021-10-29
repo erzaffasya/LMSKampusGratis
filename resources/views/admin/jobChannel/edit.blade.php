@@ -30,7 +30,7 @@
                 <select class="form-control" name="tipe">
                   <option disabled selected>{{$jobChannel->tipe}}</option>
                   <option value="Full Time">Full Time</option>
-                  <option value="Intership">Intership</option>
+                  <option value="Internship">Internship</option>
                   <option value="Part Time">Part Time</option>
                 </select>
               </div>

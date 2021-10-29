@@ -28,7 +28,7 @@
                 <label for="exampleFormControlSelect1">Tipe</label>
                 <select class="form-control" name="tipe" id="exampleFormControlSelect1">
                   <option value="Full Time">Full Time</option>
-                  <option value="Intership">Intership</option>
+                  <option value="Intersship">Internship</option>
                   <option value="Part Time">Part Time</option>
                 </select>
               </div>
