@@ -21,6 +21,18 @@ class AuthController extends Controller
         }
         return view('auth.login');
     }
+
+    public function rememberLogin(Request $request)
+    {
+        $ingat = $request->remember ? true : false;
+
+        $up = $request->only('email','password');
+
+        if (Auth::attempt($up, $ingat)) {
+            return redirect()->route('dashboard');
+        }
+        return redirect()->back();
+    }
   
     public function login(Request $request)
     {
