@@ -30,7 +30,7 @@ class ProfilController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request, $id)
+    public function store(Request $request)
     {
         $validator = Validator::make($request->all(),
               [
@@ -45,7 +45,7 @@ class ProfilController extends Controller
         if ($gambar = $request->file('gambar')) {
 
             //store file into document folder
-            $extention = $request->file->extension();
+            $extention = $request->gambar->extension();
             $file_name = time() . '.' . $extention;
             $txt = 'storage/images/'. $file_name;
             $request->gambar->storeAs('public/images', $file_name);
@@ -56,6 +56,7 @@ class ProfilController extends Controller
             $profil->no_hp = $request->no_hp;
             $profil->gambar = $txt;
 
+            $profil->save();
 
             return response()->json([
                 "success" => true,
