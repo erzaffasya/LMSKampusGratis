@@ -91,20 +91,20 @@
                 @csrf
                 <div class="mb-3">
                   <label for="exampleFormControlSelect1">Judul</label>
-                  <input type="text" class="form-control" name="judul" placeholder="Masukkan Judul">
+                  <input type="text" class="form-control" name="judul" placeholder="Masukkan Judul" required>
                 </div>
                 <div class="mb-3">
                     <label for="exampleFormControlSelect1">Deskripsi</label>
-                    <textarea class="form-control" aria-label="With textarea" name="deskripsi" rows="4"></textarea>
+                    <textarea class="form-control" aria-label="With textarea" name="deskripsi" rows="4" required></textarea>
                 </div>
                 <div class="mb-3">
                   <label for="exampleFormControlSelect1">Link</label>
-                  <input type="text" class="form-control" name="link" placeholder="Masukkan Link">
+                  <input type="text" class="form-control" name="link" placeholder="Masukkan Link" required>
                 </div>
 
                 <div class="mb-3">
                   <label for="exampleFormControlSelect1">BAB</label>
-                  <input type="number" class="form-control" name="bab">
+                  <input type="number" class="form-control" name="bab" required>
                 </div>
 
                 <div class="mb-3">
@@ -116,7 +116,7 @@
                       @endif>{{$item->nama}}</option>
                     @endforeach
                   </select>
-                  <input name="kelas_id" value="{{$item->id}}" type="hidden">
+                  <input name="kelas_id" value="{{$item->id}}" type="hidden" required>
                 </div>
 
                 <div class="text-center">
@@ -130,19 +130,19 @@
                 @csrf
                 <div class="mb-3">
                   <label for="exampleFormControlSelect1">Judul</label>
-                  <input type="text" class="form-control" name="judul" placeholder="Masukkan Judul">
+                  <input type="text" class="form-control" name="judul" placeholder="Masukkan Judul" required>
                 </div>
                 <div class="mb-3">
                   <label for="exampleFormControlSelect1">Deskripsi</label>
-                  <textarea class="form-control" aria-label="With textarea" name="deskripsi" rows="4"></textarea>
+                  <textarea class="form-control" aria-label="With textarea" name="deskripsi" rows="4" required></textarea>
                 </div>
                 <div class="mb-3">
                   <label for="exampleFormControlSelect1">File Dokumen</label>
-                  <input type="file" class="form-control" name="file">
+                  <input type="file" class="form-control" name="file" required>
                 </div>
                 <div class="mb-3">
                   <label for="exampleFormControlSelect1">BAB</label>
-                  <input type="number" class="form-control" name="bab">
+                  <input type="number" class="form-control" name="bab" required>
                 </div>
 
                 <div class="mb-3">
@@ -154,7 +154,7 @@
                       @endif>{{$item->nama}}</option>
                     @endforeach
                   </select>
-                  <input name="kelas_id" value="{{$item->id}}" type="hidden">
+                  <input name="kelas_id" value="{{$item->id}}" type="hidden" required>
                 </div>
 
                 <div class="text-center">

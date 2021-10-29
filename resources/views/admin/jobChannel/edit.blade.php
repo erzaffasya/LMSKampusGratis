@@ -11,19 +11,19 @@
               @method('PUT')
               <div class="mb-3">
                 <label for="exampleFormControlSelect1">Posisi Pekerjaan</label>
-                <input type="text" class="form-control" name="posisi_pekerjaan" value="{{$jobChannel->posisi_pekerjaan}}" >
+                <input type="text" class="form-control" name="posisi_pekerjaan" value="{{$jobChannel->posisi_pekerjaan}}" required>
               </div>
               <div class="mb-3">
                 <label for="exampleFormControlSelect1">Nama Perusahaan</label>
-                <input type="text" class="form-control" name="nama_perusahaan" value="{{$jobChannel->nama_perusahaan}}" >
+                <input type="text" class="form-control" name="nama_perusahaan" value="{{$jobChannel->nama_perusahaan}}" required>
               </div>
               <div class="mb-3">
                 <label for="exampleFormControlSelect1">Gaji</label>
-                <input type="number" class="form-control" name="gaji" value="{{$jobChannel->gaji}}" >
+                <input type="number" class="form-control" name="gaji" value="{{$jobChannel->gaji}}" required>
               </div>
               <div class="mb-3">
                 <label for="exampleFormControlSelect1">Bidang</label>
-                <input type="text" class="form-control" name="bidang" value="{{$jobChannel->bidang}}" >
+                <input type="text" class="form-control" name="bidang" value="{{$jobChannel->bidang}}" required>
               </div>
               <div class="mb-3">
                 <label for="exampleFormControlSelect1">Tipe</label>
@@ -36,11 +36,11 @@
               </div>
               <div class="mb-3">
                 <label for="exampleFormControlSelect1">Pengalaman</label>
-                <input type="text" class="form-control" name="pengalaman" value="{{$jobChannel->pengalaman}}" >
+                <input type="text" class="form-control" name="pengalaman" value="{{$jobChannel->pengalaman}}" required>
               </div>        
               <div class="mb-3">
                 <label for="exampleFormControlSelect1">Foto</label>
-                <input type="file" class="form-control" name="foto" value="{{$jobChannel->foto}}">{{$jobChannel->foto}}
+                <input type="file" class="form-control" name="foto" value="{{$jobChannel->foto}}" required>{{$jobChannel->foto}}
               </div>         
               <div class="text-end">
                       <a href="javascript:history.back()" class="btn bg-gradient-danger"><i class="ni ni-bold-left"></i>&nbsp;&nbsp;Batal</a> 

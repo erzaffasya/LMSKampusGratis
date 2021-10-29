@@ -10,23 +10,23 @@
               @csrf
               <div class="mb-3">
                 <label for="exampleFormControlSelect1">Posisi Pekerjaan</label>
-                <input type="text" class="form-control" name="posisi_pekerjaan" placeholder="Posisi Pekerjaan" >
+                <input type="text" class="form-control" name="posisi_pekerjaan" placeholder="Posisi Pekerjaan" required>
               </div>
               <div class="mb-3">
                 <label for="exampleFormControlSelect1">Nama Perusahaan</label>
-                <input type="text" class="form-control" name="nama_perusahaan" placeholder="Nama Perusahaan" >
+                <input type="text" class="form-control" name="nama_perusahaan" placeholder="Nama Perusahaan" required>
               </div>
               <div class="mb-3">
                 <label for="exampleFormControlSelect1">Gaji</label>
-                <input type="number" class="form-control" name="gaji" placeholder="Gaji" >
+                <input type="number" class="form-control" name="gaji" placeholder="Gaji" required>
               </div>
               <div class="mb-3">
                 <label for="exampleFormControlSelect1">Bidang</label>
-                <input type="text" class="form-control" name="bidang" placeholder="Bidang" >
+                <input type="text" class="form-control" name="bidang" placeholder="Bidang" required>
               </div>
               <div class="mb-3">
                 <label for="exampleFormControlSelect1">Tipe</label>
-                <select class="form-control" name="tipe" id="exampleFormControlSelect1">
+                <select class="form-control" name="tipe" id="exampleFormControlSelect1" required>
                   <option value="Full Time">Full Time</option>
                   <option value="Intersship">Internship</option>
                   <option value="Part Time">Part Time</option>
@@ -34,11 +34,11 @@
               </div>
               <div class="mb-3">
                 <label for="exampleFormControlSelect1">Pengalaman</label>
-                <input type="text" class="form-control" name="pengalaman" placeholder="Pengalaman" >
+                <input type="text" class="form-control" name="pengalaman" placeholder="Pengalaman" required>
               </div>        
               <div class="mb-3">
                 <label for="exampleFormControlSelect1">Foto</label>
-                <input type="file" class="form-control" name="foto">
+                <input type="file" class="form-control" name="foto" required>
               </div>               
               <div class="text-end">
                       <a href="javascript:history.back()" class="btn bg-gradient-danger"><i class="ni ni-bold-left"></i>&nbsp;&nbsp;Batal</a> 

@@ -11,7 +11,7 @@
               @method('PUT')
               <div class="mb-3">
                 <label for="exampleFormControlSelect1">Iklan</label>
-                <input type="file" class="form-control" name="gambar">
+                <input type="file" class="form-control" name="gambar" required>
               </div>
               <div class="text-end">
                       <a href="javascript:history.back()" class="btn bg-gradient-danger"><i class="ni ni-bold-left"></i>&nbsp;&nbsp;Batal</a> 

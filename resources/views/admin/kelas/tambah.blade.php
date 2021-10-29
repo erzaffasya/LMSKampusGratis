@@ -10,11 +10,11 @@
               @csrf
               <div class="mb-3">
                 <label for="exampleFormControlSelect1">Nama Kelas</label>
-                <input type="text" class="form-control" name="nama" placeholder="Nama" aria-label="Name" aria-describedby="email-addon">
+                <input type="text" class="form-control" name="nama" placeholder="Nama" aria-label="Name" aria-describedby="email-addon" required>
               </div>
               <div class="mb-3">
                 <label for="exampleFormControlSelect1">Deskripsi</label>
-                <textarea class="form-control" aria-label="With textarea" name="deskripsi" rows="4"></textarea>
+                <textarea class="form-control" aria-label="With textarea" name="deskripsi" rows="4" required></textarea>
               </div>
               <div class="text-end">
                       <a href="javascript:history.back()" class="btn bg-gradient-danger"><i class="ni ni-bold-left"></i>&nbsp;&nbsp;Batal</a> 

@@ -9,14 +9,14 @@
             <form role="form text-left" action="{{route('profil.store')}}" method="POST" enctype="multipart/form-data">
               @csrf
                 <div class="mb-3">
-                  <input type="text" name="nama" class="form-control" placeholder="Nama" aria-label="nama" aria-describedby="nama" >
+                  <input type="text" name="nama" class="form-control" placeholder="Nama" aria-label="nama" aria-describedby="nama" required>
                 </div>
                 <div class="mb-3">
-                  <input type="number"  name="no_hp" class="form-control" placeholder="Nomor Handphone" aria-label="no_hp" aria-describedby="no_hp">
+                  <input type="number"  name="no_hp" class="form-control" placeholder="Nomor Handphone" aria-label="no_hp" aria-describedby="no_hp" required>
                 </div>
                 <div class="mb-3">
                   <label for="exampleFormControlSelect1">Gambar</label>
-                  <input type="file" class="form-control" name="gambar">
+                  <input type="file" class="form-control" name="gambar" required>
                 </div>
                 <div class="text-end">
                   <a href="javascript:history.back()" class="btn bg-gradient-danger"><i class="ni ni-bold-left"></i>&nbsp;&nbsp;Batal</a> 

@@ -11,11 +11,11 @@
               @method('PUT')
               <div class="mb-3">
                 <label for="exampleFormControlSelect1">Nama Kelas</label>
-                <input type="text" class="form-control" name="nama" placeholder="Nama" value="{{$kelas->nama}}" aria-label="Name" aria-describedby="email-addon">
+                <input type="text" class="form-control" name="nama" placeholder="Nama" value="{{$kelas->nama}}" aria-label="Name" aria-describedby="email-addon" required>
               </div>
               <div class="mb-3">
                 <label for="exampleFormControlSelect1">Deskripsi Kelas</label>
-                <input type="text" class="form-control" name="deskripsi" placeholder="Deskripsi Kelas" value="{{$kelas->deskripsi}}" aria-label="Name" aria-describedby="email-addon">
+                <input type="text" class="form-control" name="deskripsi" placeholder="Deskripsi Kelas" value="{{$kelas->deskripsi}}" aria-label="Name" aria-describedby="email-addon" required>
               </div>
               <div class="text-end">
                       <a href="javascript:history.back()" class="btn bg-gradient-danger"><i class="ni ni-bold-left"></i>&nbsp;&nbsp;Batal</a> 
