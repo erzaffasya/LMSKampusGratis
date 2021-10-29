@@ -39,8 +39,9 @@
                 <input type="text" class="form-control" name="pengalaman" value="{{$jobChannel->pengalaman}}" required>
               </div>        
               <div class="mb-3">
-                <label for="exampleFormControlSelect1">Foto</label>
-                <input type="file" class="form-control" name="foto" value="{{$jobChannel->foto}}" required>{{$jobChannel->foto}}
+                <label for="exampleFormControlSelect1">Foto</label> <br>
+                <img src="{{ asset( $jobChannel->foto) }}" alt=""> <br>
+                <input type="file" class="form-control" name="foto" value="{{$jobChannel->foto}}" required>
               </div>         
               <div class="text-end">
                       <a href="javascript:history.back()" class="btn bg-gradient-danger"><i class="ni ni-bold-left"></i>&nbsp;&nbsp;Batal</a> 

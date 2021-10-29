@@ -10,7 +10,8 @@
               @csrf
               @method('PUT')
               <div class="mb-3">
-                <label for="exampleFormControlSelect1">Iklan</label>
+                <label for="exampleFormControlSelect1">Iklan</label> <br>
+                <img src="{{ asset( $iklan->gambar) }}" alt=""> <br>
                 <input type="file" class="form-control" name="gambar" required>
               </div>
               <div class="text-end">

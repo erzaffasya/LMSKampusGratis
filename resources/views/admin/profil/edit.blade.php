@@ -17,6 +17,7 @@
                 </div>
                 <div class="mb-3">
                   <label for="exampleFormControlSelect1">Gambar</label>
+                  <img src="{{ asset( $profil->gambar) }}" alt=""> <br>
                   <input type="file" class="form-control" name="gambar" required>
                 </div>
                 <div class="text-end">

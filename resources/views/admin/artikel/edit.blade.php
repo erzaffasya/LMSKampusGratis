@@ -14,8 +14,9 @@
                 <input type="text" class="form-control" name="judul" placeholder="Nama" value="{{$artikel->judul}}" required>
               </div>
               <div class="mb-3">
-                <label for="exampleFormControlSelect1">Gambar</label>
-                <input type="file" class="form-control" name="gambar" required>
+                <label for="exampleFormControlSelect1">Gambar</label> <br>  
+                <img src="{{ asset( $artikel->gambar) }}" alt=""> <br>
+                <input type="file" class="form-control" name="gambar" value="{{$artikel->gambar}}" required> 
               </div>
               <div class="mb-3">
                 <label for="exampleFormControlSelect1">Deskripsi</label>
