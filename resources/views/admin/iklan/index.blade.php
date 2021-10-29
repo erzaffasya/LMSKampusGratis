@@ -5,7 +5,6 @@
         <div class="row">
           <div class="col-6 d-flex align-items-center">
             <h6 class="mb-0">Data Iklan</h6>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
           </div>
           <div class="col-6 text-end">
             <a class="btn bg-gradient-dark mb-0" href="{{route('iklan.create')}}"><i class="fas fa-plus"></i>&nbsp;&nbsp;Tambah Iklan</a>
@@ -59,27 +58,6 @@
       fixedHeight: true
     });
   </script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js"></script>
-<script type="text/javascript">
- 
-     $('.show_confirm').click(function(event) {
-          var form =  $(this).closest("form");
-          var name = $(this).data("gambar");
-          event.preventDefault();
-          swal({
-              title: `Hapus Data?`,
-              text: "Jika data terhapus, data akan hilang selamanya!",
-              icon: "warning",
-              buttons: true,
-              dangerMode: true,
-          })
-          .then((willDelete) => {
-            if (willDelete) {
-              form.submit();
-            }
-          });
-      });
-  
-</script>
+  @include('partials.scripts')
   @endpush
 </x-app-layout>

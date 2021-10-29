@@ -52,7 +52,7 @@
                       <form action="{{route('kontenDokumen.destroy', $item->id)}}" method="POST" style="display: inline">
                         @csrf
                         @method("DELETE")
-                        <button type="submit" class="btn btn-link text-danger text-gradient px-3 mb-0"><i class="fas fa-trash text-secondary"></i></button>
+                        <button type="submit" class="btn btn-link text-danger text-gradient px-3 mb-0 show_confirm" data-toggle="tooltip" title='Delete'><i class="fas fa-trash text-secondary"></i></button>
                       </form>
                       <a class="btn btn-link text-dark px-3 mb-0" href="{{route('kontenDokumen.edit', $item->id)}}"><i class="fas fa-user-edit text-secondary"></i></a>
                     </div>
@@ -73,5 +73,6 @@
       fixedHeight: true
     });
   </script>
+  @include('partials.scripts')
   @endpush
 </x-app-layout>
