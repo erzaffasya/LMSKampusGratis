@@ -59,7 +59,7 @@
                   </td>
                   <td>
                     <div class="ms-auto text-center">
-                      <form action="{{route('kelas.destroy', $item->id)}}" method="POST" style="display: inline">
+                      <form action="{{route('jobChannel.destroy', $item->id)}}" method="POST" style="display: inline">
                         @csrf
                         @method("DELETE")
                         <button type="submit" class="btn btn-link text-danger text-gradient px-3 mb-0 show_confirm" data-toggle="tooltip" title='Delete'><i class="fas fa-trash text-secondary"></i></button>
@@ -99,7 +99,26 @@
       searchable: true,
       fixedHeight: true
     });
+
+    
+    $('.show_confirm').click(function(event) {
+            var form =  $(this).closest("form");
+            var name = $(this).data("name");
+            event.preventDefault();
+            swal({
+                title: `Hapus Data?`,
+                text: "Jika data terhapus, data akan hilang selamanya!",
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
+            })
+            .then((willDelete) => {
+              if (willDelete) {
+                form.submit();
+              }
+            });
+        });
+    
   </script>
-  @include('partials.scripts')
   @endpush
 </x-app-layout>

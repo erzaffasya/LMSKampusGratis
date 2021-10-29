@@ -2,8 +2,8 @@
 <html lang="en">
 
 @include('partials.head')
-@include('notify::components.notify')
-@notifyCss
+{{-- @include('notify::components.notify')
+@notifyCss --}}
 <body class="g-sidenav-show  bg-gray-100">
 
   <!-- sidebar -->
@@ -41,7 +41,7 @@
   
 
   @include('partials.scripts')
-  @notifyJs
+  {{-- @notifyJs --}}
 </body>
 
 </html>
