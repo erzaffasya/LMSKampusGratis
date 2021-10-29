@@ -116,7 +116,7 @@
                       @endif>{{$item->nama}}</option>
                     @endforeach
                   </select>
-                  <input name="kelas_id" value="{{$item->id}}" type="hidden" required>
+                  <input name="kelas_id" value="{{$kelas->id}}" type="hidden" required>
                 </div>
 
                 <div class="text-center">
@@ -154,7 +154,7 @@
                       @endif>{{$item->nama}}</option>
                     @endforeach
                   </select>
-                  <input name="kelas_id" value="{{$item->id}}" type="hidden" required>
+                  <input name="kelas_id" value="{{$kelas->id}}" type="hidden" required>
                 </div>
 
                 <div class="text-center">
