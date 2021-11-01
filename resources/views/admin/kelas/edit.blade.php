@@ -1,7 +1,7 @@
 <x-app-layout>
   <div class="container-fluid py-4">
     <div class="row">
-      <div class="col-lg-9 col-12 mx-auto">
+      <div class="col-lg-5 col-12 mx-auto">
         <div class="card card-body mt-4">
           <h6 class="mb-0">Edit Kelas</h6>
           <hr class="horizontal dark my-3">

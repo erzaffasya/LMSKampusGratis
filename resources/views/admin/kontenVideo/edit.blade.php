@@ -1,6 +1,6 @@
 <x-app-layout>
   <div class="row">
-    <div class="col-6">
+    <div class="col-lg-5 col-12 mx-auto">
       <div class="card mb-4">
         <div class="card-header pb-0">
           <h6>Edit Konten Video</h6>

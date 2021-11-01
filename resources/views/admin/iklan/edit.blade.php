@@ -9,9 +9,14 @@
             <form role="form text-left" action="{{route('iklan.update',$iklan->id)}}" method="POST" enctype="multipart/form-data">
               @csrf
               @method('PUT')
+              <div class="mb-3 mx-auto text-center">
+                {{-- <label for="exampleFormControlSelect1">Iklan</label> <br> --}}
+                <img src="{{ asset( $iklan->gambar) }}" alt="" height="200"> <br>
+                {{-- <input type="file" class="form-control" name="gambar" required> --}}
+              </div>
               <div class="mb-3">
                 <label for="exampleFormControlSelect1">Iklan</label> <br>
-                <img src="{{ asset( $iklan->gambar) }}" alt=""> <br>
+                {{-- <img src="{{ asset( $iklan->gambar) }}" alt="" height="200"> <br> --}}
                 <input type="file" class="form-control" name="gambar" required>
               </div>
               <div class="text-end">
