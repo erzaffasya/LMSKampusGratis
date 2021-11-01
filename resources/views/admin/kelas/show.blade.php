@@ -98,6 +98,14 @@
                     <textarea class="form-control" aria-label="With textarea" name="deskripsi" rows="4" required></textarea>
                 </div>
                 <div class="mb-3">
+                  <label for="exampleFormControlSelect1">Kategori</label>
+                  <select class="form-control" name="kategori" id="exampleFormControlSelect1" required>
+                    <option value="Basic">Basic</option>
+                    <option value="Intermediate">Intermediate</option>
+                    <option value="Advanced">Advanced</option>
+                  </select>
+                </div>
+                <div class="mb-3">
                   <label for="exampleFormControlSelect1">Link</label>
                   <input type="text" class="form-control" name="link" placeholder="Masukkan Link" required>
                 </div>
@@ -135,6 +143,14 @@
                 <div class="mb-3">
                   <label for="exampleFormControlSelect1">Deskripsi</label>
                   <textarea class="form-control" aria-label="With textarea" name="deskripsi" rows="4" required></textarea>
+                </div>
+                <div class="mb-3">
+                  <label for="exampleFormControlSelect1">Kategori</label>
+                  <select class="form-control" name="kategori" id="exampleFormControlSelect1" required>
+                    <option value="Basic">Basic</option>
+                    <option value="Intermediate">Intermediate</option>
+                    <option value="Advanced">Advanced</option>
+                  </select>
                 </div>
                 <div class="mb-3">
                   <label for="exampleFormControlSelect1">File Dokumen</label>

@@ -31,6 +31,7 @@ class KontenVideoController extends Controller
         $request->validate([
             'judul' => 'required',
             'deskripsi' => 'required',
+            'kategori' => 'required',
             'link' => 'required',
             'bab' => 'required',
             'kelas_id' => 'required',
@@ -38,6 +39,7 @@ class KontenVideoController extends Controller
         KontenVideo::create([
             'judul' => $request->judul,
             'deskripsi' => $request->deskripsi,
+            'kategori' => $request->kategori,
             'link' => $request->link,
             'bab' => $request->bab,
             'kelas_id' => $request->kelas_id,
@@ -67,6 +69,7 @@ class KontenVideoController extends Controller
         $kontenVideo = KontenVideo::findOrFail($id);
         $kontenVideo->judul = $request->judul;
         $kontenVideo->deskripsi = $request->deskripsi;
+        $kontenVideo->kategori = $request->kategori;
         $kontenVideo->link = $request->link;
         $kontenVideo->bab = $request->bab;
         $kontenVideo->kelas_id = $request->kelas_id;

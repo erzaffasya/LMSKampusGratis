@@ -31,6 +31,7 @@ class KontenDokumenController extends Controller
         $request->validate([
             'judul' => 'required',
             'deskripsi' => 'required',
+            'kategori' => 'required',
             'file' => 'required',
             'bab' => 'required',
             'kelas_id' => 'required',
@@ -49,6 +50,7 @@ class KontenDokumenController extends Controller
         KontenDokumen::create([
             'judul' => $request->judul,
             'deskripsi' => $request->deskripsi,
+            'kategori' => $request->kategori,
             'file' => $txt,
             'bab' => $request->bab,
             'kelas_id' => $request->kelas_id,
@@ -81,6 +83,7 @@ class KontenDokumenController extends Controller
         $kontenDokumen = KontenDokumen::findOrFail($id);
         $kontenDokumen->judul = $request->judul;
         $kontenDokumen->deskripsi = $request->deskripsi;  
+        $kontenDokumen->kategori = $request->kategori;  
         $kontenDokumen->bab = $request->bab;
         $kontenDokumen->kelas_id = $request->kelas_id;
 

@@ -20,6 +20,7 @@
                   <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">No</th>
                   <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ">Judul</th>
                   <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Deskripsi</th>
+                  <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Kategori</th>
                   <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Link</th>
                   <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Bab</th>
                   <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Kelas</th>
@@ -38,6 +39,9 @@
                     </td>
                     <td class="align-middle text-center">
                       <span class="text-secondary text-xs font-weight-bold">{!! $item->deskripsi !!}</span>
+                    </td>
+                    <td class="align-middle text-center">
+                      <span class="text-secondary text-xs font-weight-bold">{!! $item->kategori !!}</span>
                     </td>
                     <td class="align-middle text-center">
                       <span class="text-secondary text-xs font-weight-bold">{{ $item->link }}</span>

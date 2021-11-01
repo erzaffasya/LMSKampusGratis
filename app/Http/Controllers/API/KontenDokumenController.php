@@ -32,7 +32,7 @@ class KontenDokumenController extends Controller
         $validator = Validator::make($request->all(),
               [
                 'judul' => 'required',
-                'deskripsi' => 'required',
+                'deskripsi' => 'required    ',
                 'file' => 'required|mimes:doc,docx,pdf,txt|max:2048',
                 'bab' => 'required',
              ]);

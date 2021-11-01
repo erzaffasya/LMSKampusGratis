@@ -17,6 +17,7 @@ class CreateKontenDokumensTable extends Migration
             $table->id();
             $table->string('judul');
             $table->string('deskripsi');
+            $table->enum('kategori', ['Basic', 'Intermediate', 'Advanced'])->default('Basic');
             $table->string('file');
             $table->string('bab');
             $table->foreignId("kelas_id")->constrained("kelas")->onDelete("cascade")->onUpdate("cascade");

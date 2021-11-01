@@ -20,6 +20,7 @@
                   <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">No</th>
                   <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ">Judul</th>
                   <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Deskripsi</th>
+                  <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Kategori</th>
                   <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">File</th>
                   <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">BAB</th>
                   <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Kelas</th>
@@ -37,6 +38,9 @@
                   </td>
                   <td class="align-middle text-center">
                     <span class="text-secondary text-xs font-weight-bold">{!! $item->deskripsi !!}</span>
+                  </td>
+                  <td class="align-middle text-center">
+                    <span class="text-secondary text-xs font-weight-bold">{!! $item->kategori !!}</span>
                   </td>
                   <td class="align-middle text-center">
                     <a href="{{asset($item->file)}}" target="_blank">Cek Berkas</a>

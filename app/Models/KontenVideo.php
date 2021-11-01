@@ -12,6 +12,7 @@ class KontenVideo extends Model
     protected $fillable = [
         'judul',
         'deskripsi',
+        'kategori',
         'link',
         'bab',
         'kelas_id'

@@ -12,6 +12,7 @@ class KontenDokumen extends Model
     protected $fillable = [
         'judul',
         'deskripsi',
+        'kategori',
         'file',
         'bab',
         'kelas_id'
