@@ -93,6 +93,7 @@ class KontenVideoController extends Controller
         $request->validate([
             'judul' => 'required',
             'deskripsi' => 'required',
+            'kategori' => 'kategori',
             'link' => 'required',
             'bab' => 'required',
         ]);
@@ -100,6 +101,7 @@ class KontenVideoController extends Controller
         $video = new KontenVideo();
         $video->judul = $request->judul;
         $video->deskripsi = $request->deskripsi;
+        $video->kategori = $request->kategori;
         $video->link = $request->link;
         $video->bab = $request->bab;
         $kelas->get_video()->save($video);
